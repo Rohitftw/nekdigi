@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "About",
+    "what": "What we do",
+    "packages": "Packages",
+    "how": "How it works",
+    "clients": "Customers",
+    "cta": "Let's Talk"
+  },
+  "hero": {
+    "line1": "We boost",
+    "line2": "your brand with",
+    "line3": "digital excellence.",
+    "subheadline": "ADVERTISING & MARKETING AGENCY",
+    "scroll": "Explore"
+  },
+  "projects": {
+    "overline": "Featured Work",
+    "title": "Proven results, premium design.",
+    "cta": "View All Projects"
+  },
+  "process": {
+    "overline": "Our Process",
+    "title": "A modern approach to digital.",
+    "desc": "We don't just build. We partner, strategize, and elevate. Our process is built on a transparent foundation of three key pillars.",
+    "step1_title": "01. Strategy & Discovery",
+    "step1_desc": "We start by diving deep. We analyze your brand, audience, and goals to build a comprehensive roadmap. This isn't just a plan; it's the blueprint for your digital success.",
+    "step2_title": "02. Design & Development",
+    "step2_desc": "This is where vision becomes reality. Our team creates pixel-perfect, intuitive designs and writes clean, scalable code. We focus on creating a seamless user experience.",
+    "step3_title": "03. Optimize & Scale",
+    "step3_desc": "Launch is just the beginning. We deploy your project and then obsess over performance, using tools like Google Ads and SEO to drive traffic and build loyalty."
+  },
+  "clients": {
+    "title": "Trusted by innovative brands"
+  },
+  "faq": {
+    "overline": "Got Questions?",
+    "title": "Clarify your confusion.",
+    "q1": "What is a domain name?",
+    "a1": "A domain name is your website's unique address on the internet, like 'nekdigital.nl'. It's how people find you.",
+    "q2": "What is web hosting?",
+    "a2": "Web hosting is the service that stores your website's files on a server, making it accessible to anyone on the web.",
+    "q3": "How long does a website take?",
+    "a3": "A standard business website typically takes 4-6 weeks from start to launch, depending on the complexity and content.",
+    "q4": "What is the investment for a new website?",
+    "a4": "Our packages start from €159 per month, but we provide custom quotes based on your specific needs and goals."
+  },
+  "cta": {
+    "line1": "Let's build",
+    "line2": "what's next.",
+    "button": "Start a Project"
+  },
+  "footer": {
+    "tagline": "Digital Excellence.",
+    "explore": "Explore",
+    "connect": "Connect",
+    "touch": "Get in touch",
+    "rights": "NekDigital. All Rights Reserved."
+  }
+}

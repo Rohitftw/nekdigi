@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "about": "Over Ons",
+    "what": "Wat we doen",
+    "packages": "Pakketten",
+    "how": "Hoe het werkt",
+    "clients": "Klanten",
+    "cta": "Laten we Praten"
+  },
+  "hero": {
+    "line1": "Wij boosten",
+    "line2": "jouw merk met",
+    "line3": "digitale excellentie.",
+    "subheadline": "ADVERTISING & MARKETING BUREAU",
+    "scroll": "Ontdek"
+  },
+  "projects": {
+    "overline": "Uitgelicht Werk",
+    "title": "Bewezen resultaten, premium design.",
+    "cta": "Bekijk Alle Projecten"
+  },
+  "process": {
+    "overline": "Ons Proces",
+    "title": "Een moderne aanpak voor digitaal.",
+    "desc": "Wij bouwen niet alleen. We werken samen, bedenken strategieën en tillen het naar een hoger niveau. Ons proces is gebouwd op een transparante basis van drie belangrijke pijlers.",
+    "step1_title": "01. Strategie & Ontdekking",
+    "step1_desc": "We beginnen met diep te duiken. We analyseren uw merk, doelgroep en doelen om een uitgebreide routekaart te bouwen. Dit is niet zomaar een plan; het is de blauwdruk voor uw digitale succes.",
+    "step2_title": "02. Design & Ontwikkeling",
+    "step2_desc": "Hier wordt visie werkelijkheid. Ons team creëert pixel-perfecte, intuïtieve ontwerpen en schrijft schone, schaalbare code. We richten ons op het creëren van een naadloze gebruikerservaring.",
+    "step3_title": "03. Optimaliseren & Schalen",
+    "step3_desc": "Lancering is nog maar het begin. We implementeren uw project en zijn dan geobsedeerd door prestaties, met behulp van tools zoals Google Ads en SEO om verkeer te genereren en loyaliteit op te bouwen."
+  },
+  "clients": {
+    "title": "Vertrouwd door innovatieve merken"
+  },
+  "faq": {
+    "overline": "Heeft u Vragen?",
+    "title": "Verhelder uw verwarring.",
+    "q1": "Wat is een domeinnaam?",
+    "a1": "Een domeinnaam is het unieke adres van uw website op internet, zoals 'nekdigital.nl'. Zo vinden mensen u.",
+    "q2": "Wat is webhosting?",
+    "a2": "Webhosting is de service die de bestanden van uw website op een server opslaat, waardoor deze toegankelijk is voor iedereen op het web.",
+    "q3": "Hoe lang duurt een website?",
+    "a3": "Een standaard bedrijfswebsite duurt doorgaans 4-6 weken van start tot lancering, afhankelijk van de complexiteit.",
+    "q4": "Wat is de investering voor een new website?",
+    "a4": "Onze pakketten beginnen vanaf €159 per maand, maar we geven offertes op maat op basis van uw specifieke behoeften."
+  },
+  "cta": {
+    "line1": "Laten we",
+    "line2": "bouwen.",
+    "button": "Start een Project"
+  },
+  "footer": {
+    "tagline": "Digitale Excellentie.",
+    "explore": "Ontdek",
+    "connect": "Volg Ons",
+    "touch": "Neem contact op",
+    "rights": "NekDigital. Alle Rechten Voorbehouden."
+  }
+}
