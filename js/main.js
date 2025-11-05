@@ -1,5 +1,5 @@
 /* =============================================================
-  NEKDIGITAL - MAIN.JS (The Full Engine v2)
+  NEKDIGITAL - MAIN.JS (The Full Engine v3 - FINAL)
   This single file controls all animations and interactions 
   for the entire website, including the language switcher.
   =============================================================
@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         window.addEventListener("resize", handleHorizontalScroll);
     }
     
-    // --- 8. PAGE-SPECIFIC: ABOUT (3D PROMISE CARDS) ---
+    // --- 8. PAGE-SPECIFIC: ABOUT & PACKAGES (3D PROMISE CARDS) ---
     const promiseCards = document.querySelectorAll(".promise-card");
 
     if (promiseCards.length > 0) {
@@ -196,43 +196,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // --- 10. PAGE-SPECIFIC: PACKAGES (CONSOLE LOGIC) ---
+    // This data is *only* for the console UI (price/link). The language file handles the text.
     const packageData = {
         "essential": {
-            title: "Essential Launch",
-            desc: "Perfect for establishing online visibility. A professional presence and all tools to run your business.",
             price: "€159",
             link: "contact.html?package=essential-launch"
         },
         "growth": {
-            title: "Growth Engine",
-            desc: "Works best for the hospitality startup. No commissions, clear terms, combination services, full support.",
             price: "€239",
             link: "contact.html?package=growth-engine"
         },
         "dominance": {
-            title: "Digital Dominance",
-            desc: "To boost customer retention and automate your marketing. An automated email campaign.",
             price: "€299",
             link: "contact.html?package=digital-dominance"
         }
     };
     const toggleButtons = document.querySelectorAll(".package-toggle-btn");
     const allFeatures = document.querySelectorAll(".package-feature-list li");
-    const displayTitle = document.getElementById("pkg-title");
-    const displayDesc = document.getElementById("pkg-desc");
     const displayPrice = document.getElementById("pkg-price");
     const displayCta = document.getElementById("pkg-cta-link");
 
+    // This function ONLY handles non-text updates (price, link, classes)
     function updatePackageDisplay(pkgName) {
-        if (!packageData[pkgName] || !displayTitle) return; // Check if elements exist
+        if (!packageData[pkgName] || !displayPrice) return; 
+        
         const data = packageData[pkgName];
-        displayTitle.textContent = data.title;
-        displayDesc.textContent = data.desc;
+        
+        // Update Price and Link
         displayPrice.textContent = data.price;
-        displayCta.href = data.link;
+        if(displayCta) displayCta.href = data.link;
+        
+        // Update toggle button states
         toggleButtons.forEach(btn => {
             btn.classList.toggle("is-active", btn.dataset.pkg === pkgName);
         });
+        
+        // Update feature list "active" states
         allFeatures.forEach(li => {
             const includedIn = li.dataset.inPkg;
             if (includedIn && includedIn.includes(pkgName)) {
@@ -246,10 +245,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (toggleButtons.length > 0) {
         toggleButtons.forEach(btn => {
             btn.addEventListener("click", () => {
-                updatePackageDisplay(btn.dataset.pkg);
+                const pkgName = btn.dataset.pkg;
+                // 1. Update the price, link, and active feature list
+                updatePackageDisplay(pkgName);
+                // 2. Update the text content (title and desc)
+                applyPackageTranslations(); 
             });
         });
-        updatePackageDisplay("essential"); // Set initial state
+        // Set initial state on page load
+        updatePackageDisplay("essential");
     }
 
     // --- 11. PAGE-SPECIFIC: HOW-IT-WORKS (CIRCUIT TIMELINE) ---
@@ -362,34 +366,50 @@ document.addEventListener("DOMContentLoaded", () => {
           throw new Error(`Language file not found: ${lang}.json`);
         }
         translations = await response.json();
-        applyTranslations();
         
-        // Save the user's choice to local storage
+        // Apply translations to all static keys
+        applyTranslations();
+        // Apply translations to dynamic package console
+        applyPackageTranslations(); 
+        
         localStorage.setItem('nekdigital_lang', lang);
         updateLanguageButtons(lang);
         
       } catch (error) {
         console.error('Error loading language:', error);
-        // If the chosen language fails, fallback to English
         if (lang !== 'en') {
-          loadLanguage('en');
+          loadLanguage('en'); // Fallback to English
         }
       }
     }
 
-    // 2. Function to apply the loaded translations to the page
+    // 2. Function to apply the loaded translations to all static elements
     function applyTranslations() {
-      // Find all elements that have a 'data-lang-key'
       const elements = document.querySelectorAll('[data-lang-key]');
       elements.forEach(el => {
         const key = el.dataset.langKey;
         const translation = getNestedTranslation(key);
         if (translation) {
-          el.textContent = translation; // Replace the text
+          el.textContent = translation;
         } else {
           console.warn(`No translation found for key: ${key}`);
         }
       });
+    }
+
+    // 2b. Special function to update ONLY the dynamic package console text
+    function applyPackageTranslations() {
+        const activePkgBtn = document.querySelector(".package-toggle-btn.is-active");
+        // Exit if we're not on the packages page
+        if (!activePkgBtn) return; 
+        
+        const activePkg = activePkgBtn.dataset.pkg;
+        
+        const titleEl = document.getElementById("pkg-title");
+        const descEl = document.getElementById("pkg-desc");
+        
+        if (titleEl) titleEl.textContent = getNestedTranslation(`packages.pkg_${activePkg}_title`);
+        if (descEl) descEl.textContent = getNestedTranslation(`packages.pkg_${activePkg}_desc`);
     }
 
     // 3. Function to update the active state of the buttons
@@ -408,34 +428,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (langToggleBtn && langSwitcher && langOptions) {
         
-        // A. Logic to open/close the menu
         langToggleBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           langSwitcher.classList.toggle("is-open");
         });
 
-        // B. Logic to select a language
         langOptions.forEach(option => {
           option.addEventListener("click", (e) => {
             e.preventDefault();
             const selectedLang = option.dataset.lang;
-            
-            // Load the new language
-            loadLanguage(selectedLang);
-            
-            // Close the menu
+            loadLanguage(selectedLang); // Load new language
             langSwitcher.classList.remove("is-open");
           });
         });
         
-        // C. Logic to close menu when clicking anywhere else
         document.addEventListener("click", () => {
           langSwitcher.classList.remove("is-open");
         });
       }
 
       // 5. Load the saved language on page load
-      const savedLang = localStorage.getItem('nekdigital_lang') || 'en'; // Default to 'en'
+      const savedLang = localStorage.getItem('nekdigital_lang') || 'en';
       loadLanguage(savedLang);
     }
 

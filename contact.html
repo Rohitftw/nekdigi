@@ -24,14 +24,15 @@
                 <span class="header-logo-icon">N</span>
                 <span class="header-logo-text">NekDigital</span>
             </a>
-            <div class="header-nav-links">
+            <div class="header-nav-wrapper">
+                
                 <div class="header-nav-links">
-                    <a href="about.html">About</a>
-                    <a href="services.html">What we do</a>
-                    <a href="packages.html">Packages</a>
-                    <a href="how-it-works.html">How it works</a>
-                    <a href="clients.html">Customers</a>
-                    </div>
+                    <a href="about.html" data-lang-key="nav.about">About</a>
+                    <a href="services.html" data-lang-key="nav.what">What we do</a>
+                    <a href="packages.html" data-lang-key="nav.packages">Packages</a>
+                    <a href="how-it-works.html" data-lang-key="nav.how">How it works</a>
+                    <a href="clients.html" data-lang-key="nav.clients">Customers</a>
+                </div>
 
                 <div class="language-switcher">
                     <button class="lang-toggle-btn" id="lang-toggle" aria-label="Choose language">
@@ -41,12 +42,12 @@
                         </svg>
                     </button>
                     <div class="lang-options">
-                        <a href="#" class="lang-option is-active" data-lang="en">EN</a>
+                        <a href="#" class="lang-option" data-lang="en">EN</a>
                         <a href="#" class="lang-option" data-lang="nl">NL</a>
                     </div>
                 </div>
 
-                <a href="contact.html" class="nav-link-cta">Let's Talk</a>
+                <a href="contact.html" class="nav-link-cta" data-lang-key="nav.cta">Let's Talk</a>
             </div>
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -61,23 +62,23 @@
                 
                 <div class="contact-info-panel" data-animate="fade-in-up">
                     <h1 class="contact-headline">
-                        <span>Let's build</span>
-                        <span class="color-primary">what's next.</span>
+                        <span data-lang-key="contact.hero_line1">Let's build</span>
+                        <span class="color-primary" data-lang-key="contact.hero_line2">what's next.</span>
                     </h1>
-                    <p class="contact-subheadline">
+                    <p class="contact-subheadline" data-lang-key="contact.hero_sub">
                         Tell us about your next big idea, or just say hello. We're here to help you grow. If you prefer to talk, reach out directly.
                     </p>
                     <div class="contact-info-list">
                         <a href="mailto:info@nekdigital.nl" class="contact-info-item">
-                            <span class="info-label">Email Us</span>
+                            <span class="info-label" data-lang-key="contact.info_email">Email Us</span>
                             <span class="info-value">info@nekdigital.nl</span>
                         </a>
                         <a href="tel:+31648217892" class="contact-info-item">
-                            <span class="info-label">Call Us</span>
+                            <span class="info-label" data-lang-key="contact.info_call">Call Us</span>
                             <span class="info-value">+31 - 6 48217892</span>
                         </a>
                         <div class="contact-info-item">
-                            <span class="info-label">Find Us</span>
+                            <span class="info-label" data-lang-key="contact.info_find">Find Us</span>
                             <span class="info-value">Pošstrasse 45, 1321HH, Almere</span>
                         </div>
                     </div>
@@ -87,50 +88,50 @@
                     <form id="contact-form" action="https-form-endpoint" method="POST">
                         
                         <div class="form-step">
-                            <label class="form-label-heading">Step 1: What are you interested in? (Optional)</label>
+                            <label class="form-label-heading" data-lang-key="contact.form_step1">Step 1: What are you interested in? (Optional)</label>
                             
                             <input type="hidden" name="package" id="selected-package" value="none">
                             
                             <div class="package-selector-grid">
                                 <button type="button" class="package-card-button" data-value="Essential Launch">
-                                    <span class="package-name">Essential Launch</span>
-                                    <span class="package-price">€159</span>
+                                    <span class="package-name" data-lang-key="contact.form_pkg1_name">Essential Launch</span>
+                                    <span class="package-price" data-lang-key="contact.form_pkg1_price">€159</span>
                                 </button>
                                 <button type="button" class="package-card-button" data-value="Growth Engine">
-                                    <span class="package-name">Growth Engine</span>
-                                    <span class="package-price">€239</span>
+                                    <span class="package-name" data-lang-key="contact.form_pkg2_name">Growth Engine</span>
+                                    <span class="package-price" data-lang-key="contact.form_pkg2_price">€239</span>
                                 </button>
                                 <button type="button" class="package-card-button" data-value="Digital Dominance">
-                                    <span class="package-name">Digital Dominance</span>
-                                    <span class="package-price">€299</span>
+                                    <span class="package-name" data-lang-key="contact.form_pkg3_name">Digital Dominance</span>
+                                    <span class="package-price" data-lang-key="contact.form_pkg3_price">€299</span>
                                 </button>
                                 <button type="button" class="package-card-button" data-value="General Inquiry">
-                                    <span class="package-name">General Inquiry</span>
-                                    <span class="package-price">I'm not sure yet</span>
+                                    <span class="package-name" data-lang-key="contact.form_pkg4_name">General Inquiry</span>
+                                    <span class="package-price" data-lang-key="contact.form_pkg4_price">I'm not sure yet</span>
                                 </button>
                             </div>
                         </div>
 
                         <div class="form-step">
-                            <label class="form-label-heading">Step 2: Tell us about you</label>
+                            <label class="form-label-heading" data-lang-key="contact.form_step2">Step 2: Tell us about you</label>
                             
                             <div class="form-group">
-                                <label for="name" class="form-label">Your Name *</label>
+                                <label for="name" class="form-label" data-lang-key="contact.form_name">Your Name *</label>
                                 <input type="text" id="name" name="name" class="form-input" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="email" class="form-label">Your Email *</label>
+                                <label for="email" class="form-label" data-lang-key="contact.form_email">Your Email *</label>
                                 <input type="email" id="email" name="email" class="form-input" required>
                             </div>
                             
                             <div class="form-group">
-                                <label for="message" class="form-label">Your Message *</label>
+                                <label for="message" class="form-label" data-lang-key="contact.form_message">Your Message *</label>
                                 <textarea id="message" name="message" class="form-input" rows="4" required></textarea>
                             </div>
                             
                             <button type="submit" class="cta-button-form">
-                                <span>Send Message</span>
+                                <span data-lang-key="contact.form_submit">Send Message</span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12.62 2.25L21.37 11L12.62 19.75M20.32 11L2.62 11" stroke="currentColor" stroke-width="2" stroke-miterlimit="10" stroke-linecap="square"></path></svg>
                             </button>
                         </div>
@@ -149,27 +150,27 @@
                     <span class="header-logo-icon">N</span>
                     <span class="header-logo-text">NekDigital</span>
                 </a>
-                <p class="footer-tagline">Digital Excellence.</p>
+                <p class="footer-tagline" data-lang-key="footer.tagline">Digital Excellence.</p>
             </div>
             <div class="footer-links">
-                <h5 class="footer-heading">Explore</h5>
-                <a href="/about.html">About</a>
-                <a href="/#projects">Work</a>
-                <a href="/packages">Packages</a>
+                <h5 class="footer-heading" data-lang-key="footer.explore">Explore</h5>
+                <a href="about.html" data-lang-key="nav.about">About</a>
+                <a href="services.html" data-lang-key="nav.what">What we do</a>
+                <a href="packages.html" data-lang-key="nav.packages">Packages</a>
             </div>
             <div class="footer-links">
-                <h5 class="footer-heading">Connect</h5>
+                <h5 class="footer-heading" data-lang-key="footer.connect">Connect</h5>
                 <a href="#">LinkedIn</a>
                 <a href="#">Instagram</a>
                 <a href="#">X (Twitter)</a>
             </div>
             <div class="footer-contact">
-                <h5 class="footer-heading">Get in touch</h5>
+                <h5 class="footer-heading" data-lang-key="footer.touch">Get in touch</h5>
                 <a href="mailto:info@nekdigital.nl">info@nekdigital.nl</a>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>© <span id="current-year"></span> NekDigital. All Rights reserved.</p>
+            <p>© <span id="current-year"></span> <span data-lang-key="footer.rights">NekDigital. All Rights reserved.</span></p>
             <p class="flicker">Made by NekDigital</p>
         </div>
     </footer>
