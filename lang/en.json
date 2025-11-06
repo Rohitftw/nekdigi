@@ -1,6 +1,8 @@
 {
   "nav": {
     "about": "About",
+    "about_us": "About Us",     
+    "switching": "Switching Service",
     "what": "What we do",
     "packages": "Packages",
     "how": "How it works",
@@ -170,7 +172,7 @@
     "cta_line1": "Ready to",
     "cta_line2": "get started?",
     "cta_button": "Let's Talk"
-  }
+  },
   "how": {
     "hero_line1": "How Neksoft",
     "hero_line2": "Consultancy",
@@ -234,5 +236,24 @@
     "form_email": "Your Email *",
     "form_message": "Your Message *",
     "form_submit": "Send Message"
+  },
+
+"switching": {
+  "hero_line1": "Seamless",
+  "hero_line2": "Switching,",
+  "hero_line3": "Zero Stress.",
+  "hero_sub": "We handle the technical details. You enjoy the upgrade.",
+  "intro_overline": "The Protocol",
+  "intro_title": "A smooth transition, guaranteed.",
+  "intro_desc": "Switching is seamless with Neksoft Consultancy Services. We handle all the paperwork and ensure a smooth transition from your current web builder to ours. Below, we explain how we manage the process and what we consider.",
+  "step1_title": "Hosting and Website",
+  "step1_desc": "First, we reach out to your current hosting provider to handle all technical aspects of the transition. We ensure your website runs smoothly without interruptions, taking care of DNS settings, FTP details, and database migration—everything is our responsibility.",
+  "step2_title": "Transfer Emails",
+  "step2_desc": "Next, we handle the migration of your emails, ensuring that your existing email addresses are seamlessly transferred to the new platform. You don’t need to worry—your email, a vital part of your business, will be fully maintained throughout the process.",
+  "step3_title": "System Integration",
+  "step3_desc": "Finally, we assess any specific systems you currently use, like your reservation system, and ensure they’re properly integrated into the new platform. We handle everything so you can focus on running your business.",
+  "cta_line1": "Ready to",
+  "cta_line2": "make the switch?",
+  "cta_button": "Let's Talk"
   }
 }

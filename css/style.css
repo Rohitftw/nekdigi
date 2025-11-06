@@ -588,8 +588,8 @@ body:has(a:hover, button:hover) .custom-cursor {
   height: 100px;
   margin: 0 3rem;
   object-fit: contain;
-  filter: grayscale(1) brightness(0.7);
-  opacity: 0.7;
+  filter: grayscale(0) brightness(0.7);
+  opacity: 1;
   transition: all 0.3s ease;
 }
 .marquee-track img:hover {
@@ -1749,8 +1749,8 @@ textarea.form-input {
   max-height: 100%;
   object-fit: contain;
   /* Dimmed state */
-  filter: grayscale(1) brightness(0.5);
-  opacity: 0.4;
+  filter: grayscale(0) brightness(0.9);
+  opacity: 1;
   transition: all 0.3s ease;
 }
 
@@ -2081,4 +2081,69 @@ textarea.form-input {
   .header-nav-links, .language-switcher {
     display: none; /* Hide in mobile header, show in menu */
   }
+}
+/* --- 31. NAVBAR DROPDOWN --- */
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.nav-dropdown-btn {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 0; /* Match other nav links */
+  transition: color 0.3s ease;
+}
+.nav-dropdown:hover .nav-dropdown-btn {
+  color: var(--clr-text);
+}
+/* The Dropdown Menu */
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background-color: var(--clr-bg-medium);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+/* Show on hover */
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--clr-text-secondary);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.nav-dropdown-menu a:hover {
+  background-color: var(--clr-bg-light);
+  color: var(--clr-text);
+}
+
+/* --- 32. SWITCHING PAGE STYLES --- */
+.switching-intro {
+  max-width: 800px;
+  margin: 0 auto 6rem;
+  text-align: center;
+}
+/* Reuse existing module styles, just need a spacer for the nav */
+.switching-protocol-section {
+    margin-top: -1px; /* Ensure it blends with hero if needed */
 }
