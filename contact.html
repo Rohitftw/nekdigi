@@ -24,10 +24,17 @@
                 <span class="header-logo-icon">N</span>
                 <span class="header-logo-text">NekDigital</span>
             </a>
+
             <div class="header-nav-wrapper">
                 
                 <div class="header-nav-links">
-                    <a href="about.html" data-lang-key="nav.about">About</a>
+                    <div class="nav-dropdown">
+                        <button class="nav-dropdown-btn" data-lang-key="nav.about">About</button>
+                            <div class="nav-dropdown-menu">
+                                <a href="about.html" data-lang-key="nav.about_us">About Us</a>
+                                <a href="switching.html" data-lang-key="nav.switching">Switching Service</a>
+                            </div>
+                    </div>
                     <a href="services.html" data-lang-key="nav.what">What we do</a>
                     <a href="packages.html" data-lang-key="nav.packages">Packages</a>
                     <a href="how-it-works.html" data-lang-key="nav.how">How it works</a>
@@ -49,12 +56,12 @@
 
                 <a href="contact.html" class="nav-link-cta" data-lang-key="nav.cta">Let's Talk</a>
             </div>
+            
             <button class="mobile-nav-toggle" aria-label="Toggle navigation">
                 <span></span>
             </button>
         </nav>
     </header>
-
     <main>
 
         <section class="contact-experience-section">
