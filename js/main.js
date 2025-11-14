@@ -196,49 +196,27 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     // --- 10. PAGE-SPECIFIC: PACKAGES (CONSOLE LOGIC) ---
-    // This data is *only* for the console UI (price/link). The language file handles the text.
     const packageData = {
-        "essential": {
-            price: "€159",
-            link: "contact.html?package=essential-launch"
-        },
-        "growth": {
-            price: "€239",
-            link: "contact.html?package=growth-engine"
-        },
-        "dominance": {
-            price: "€299",
-            link: "contact.html?package=digital-dominance"
-        }
+        "essential": { price: "€159", link: "contact.html?package=essential-launch" },
+        "growth": { price: "€239", link: "contact.html?package=growth-engine" },
+        "dominance": { price: "€299", link: "contact.html?package=digital-dominance" }
     };
     const toggleButtons = document.querySelectorAll(".package-toggle-btn");
     const allFeatures = document.querySelectorAll(".package-feature-list li");
     const displayPrice = document.getElementById("pkg-price");
     const displayCta = document.getElementById("pkg-cta-link");
 
-    // This function ONLY handles non-text updates (price, link, classes)
     function updatePackageDisplay(pkgName) {
         if (!packageData[pkgName] || !displayPrice) return; 
-        
         const data = packageData[pkgName];
-        
-        // Update Price and Link
         displayPrice.textContent = data.price;
         if(displayCta) displayCta.href = data.link;
-        
-        // Update toggle button states
         toggleButtons.forEach(btn => {
             btn.classList.toggle("is-active", btn.dataset.pkg === pkgName);
         });
-        
-        // Update feature list "active" states
         allFeatures.forEach(li => {
             const includedIn = li.dataset.inPkg;
-            if (includedIn && includedIn.includes(pkgName)) {
-                li.classList.add("is-active");
-            } else {
-                li.classList.remove("is-active");
-            }
+            li.classList.toggle("is-active", includedIn && includedIn.includes(pkgName));
         });
     }
 
@@ -246,13 +224,10 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleButtons.forEach(btn => {
             btn.addEventListener("click", () => {
                 const pkgName = btn.dataset.pkg;
-                // 1. Update the price, link, and active feature list
                 updatePackageDisplay(pkgName);
-                // 2. Update the text content (title and desc)
-                applyPackageTranslations(); 
+                applyPackageTranslations(); // Update text
             });
         });
-        // Set initial state on page load
         updatePackageDisplay("essential");
     }
 
@@ -279,8 +254,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const lastStepRect = lastActiveStep.getBoundingClientRect();
             const lastStepCenterY = window.scrollY + lastStepRect.top + (lastStepRect.height / 2);
             let spineHeight = lastStepCenterY - sectionTop;
-            spineHeight = Math.max(0, spineHeight);
-            spineHeight = Math.min(spineHeight, timelineSection.offsetHeight);
+            spineHeight = Math.max(0, Math.min(spineHeight, timelineSection.offsetHeight));
             timelineSpine.style.height = `${spineHeight}px`;
         };
         window.addEventListener("scroll", handleSpineScroll, { passive: true });
@@ -318,72 +292,86 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // --- 13. PAGE-SPECIFIC: SERVICES (INTERFACE SCROLL-SPY) ---
-    const serviceNavLinks = document.querySelectorAll(".service-nav-link");
-    const serviceDossiers = document.querySelectorAll(".service-dossier");
+    // --- 13. PAGE-SPECIFIC: SERVICES & HOMEPAGE (INTERFACE SCROLL-SPY) ---
+    const navLinks = document.querySelectorAll(".showcase-nav-link, .service-nav-link");
+    const dossiers = document.querySelectorAll(".service-dossier, .showcase-dossier");
 
-    if (serviceNavLinks.length > 0 && serviceDossiers.length > 0) {
+    if (navLinks.length > 0 && dossiers.length > 0) {
         const dossierObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const id = entry.target.getAttribute('id');
-                    serviceNavLinks.forEach(link => {
-                        link.classList.remove('is-active');
+                    navLinks.forEach(link => {
+                        link.classList.toggle('is-active', link.dataset.target === id);
                     });
-                    const activeLink = document.querySelector(`.service-nav-link[data-target="${id}"]`);
-                    if (activeLink) {
-                        activeLink.classList.add('is-active');
-                    }
                 }
             });
         }, {
             threshold: 0.5,
             rootMargin: "-50% 0px -50% 0px"
         });
-        serviceDossiers.forEach(dossier => {
-            dossierObserver.observe(dossier);
+        dossiers.forEach(dossier => dossierObserver.observe(dossier));
+    }
+
+    // --- 14. CINEMATIC HERO: PARALLAX SCROLL ---
+    const heroBg = document.querySelector(".hero-background-media");
+    if (heroBg) {
+        window.addEventListener('scroll', () => {
+            const yOffset = window.pageYOffset;
+            requestAnimationFrame(() => {
+                // Use a subtle speed. Adjust -0.2 to make it faster or slower.
+                heroBg.style.transform = `translate3d(0, ${yOffset * -0.2}px, 0)`;
+            });
+        }, { passive: true });
+    }
+
+    // --- 15. CINEMATIC PROJECTS: MAGNETIC TILT CARDS ---
+    const magneticCards = document.querySelectorAll(".project-card-magnetic");
+    if (magneticCards.length > 0) {
+        const maxRotation = 8;
+        magneticCards.forEach(card => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const width = rect.width;
+                const height = rect.height;
+                const rotateY = maxRotation * ((x - width / 2) / (width / 2));
+                const rotateX = maxRotation * ((y - height / 2) / (height / 2)) * -1;
+                requestAnimationFrame(() => {
+                    card.style.transform = `perspective(1500px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
+                });
+            });
+            card.addEventListener("mouseleave", () => {
+                requestAnimationFrame(() => {
+                    card.style.transform = "perspective(1500px) rotateX(0) rotateY(0) scale3d(1, 1, 1)";
+                });
+            });
         });
     }
-
-    // --- 14. GLOBAL: LANGUAGE SWITCHER ENGINE (FUNCTIONAL) ---
-
-    let translations = {}; // This will hold our loaded translation data
-
-    // Helper function to get nested values (e.g., "hero.line1")
-    function getNestedTranslation(key) {
-      if (!key) return null;
-      return key.split('.').reduce((obj, k) => {
-        return obj && obj[k];
-      }, translations);
-    }
-
-    // 1. Function to fetch and load the language JSON
+    
+    // --- 16. GLOBAL: LANGUAGE SWITCHER ENGINE (FUNCTIONAL) ---
+    let translations = {};
     async function loadLanguage(lang) {
       try {
-        // Use a relative path to the /lang/ folder
         const response = await fetch(`./lang/${lang}.json`);
-        if (!response.ok) {
-          throw new Error(`Language file not found: ${lang}.json`);
-        }
+        if (!response.ok) throw new Error(`Language file not found: ${lang}.json`);
         translations = await response.json();
-        
-        // Apply translations to all static keys
         applyTranslations();
-        // Apply translations to dynamic package console
         applyPackageTranslations(); 
-        
         localStorage.setItem('nekdigital_lang', lang);
         updateLanguageButtons(lang);
-        
       } catch (error) {
         console.error('Error loading language:', error);
-        if (lang !== 'en') {
-          loadLanguage('en'); // Fallback to English
-        }
+        if (lang !== 'en') loadLanguage('en'); // Fallback
       }
     }
 
-    // 2. Function to apply the loaded translations to all static elements
+    function getNestedTranslation(key) {
+      if (!key) return null;
+      return key.split('.').reduce((obj, k) => (obj && obj[k]), translations);
+    }
+
     function applyTranslations() {
       const elements = document.querySelectorAll('[data-lang-key]');
       elements.forEach(el => {
@@ -392,27 +380,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (translation) {
           el.textContent = translation;
         } else {
-          console.warn(`No translation found for key: ${key}`);
+          console.warn(`No translation for key: ${key}`);
         }
       });
     }
 
-    // 2b. Special function to update ONLY the dynamic package console text
     function applyPackageTranslations() {
         const activePkgBtn = document.querySelector(".package-toggle-btn.is-active");
-        // Exit if we're not on the packages page
         if (!activePkgBtn) return; 
-        
         const activePkg = activePkgBtn.dataset.pkg;
-        
         const titleEl = document.getElementById("pkg-title");
         const descEl = document.getElementById("pkg-desc");
-        
         if (titleEl) titleEl.textContent = getNestedTranslation(`packages.pkg_${activePkg}_title`);
         if (descEl) descEl.textContent = getNestedTranslation(`packages.pkg_${activePkg}_desc`);
     }
 
-    // 3. Function to update the active state of the buttons
     function updateLanguageButtons(lang) {
       const langOptions = document.querySelectorAll(".lang-option");
       langOptions.forEach(opt => {
@@ -420,34 +402,27 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // 4. Main logic to set up the switcher
     function setupLanguageSwitcher() {
       const langSwitcher = document.querySelector(".language-switcher");
       const langToggleBtn = document.getElementById("lang-toggle");
       const langOptions = document.querySelectorAll(".lang-option");
 
       if (langToggleBtn && langSwitcher && langOptions) {
-        
         langToggleBtn.addEventListener("click", (e) => {
           e.stopPropagation();
           langSwitcher.classList.toggle("is-open");
         });
-
         langOptions.forEach(option => {
           option.addEventListener("click", (e) => {
             e.preventDefault();
-            const selectedLang = option.dataset.lang;
-            loadLanguage(selectedLang); // Load new language
+            loadLanguage(option.dataset.lang);
             langSwitcher.classList.remove("is-open");
           });
         });
-        
         document.addEventListener("click", () => {
           langSwitcher.classList.remove("is-open");
         });
       }
-
-      // 5. Load the saved language on page load
       const savedLang = localStorage.getItem('nekdigital_lang') || 'en';
       loadLanguage(savedLang);
     }

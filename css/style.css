@@ -1028,6 +1028,7 @@ body:has(a:hover, button:hover) .custom-cursor {
   width: 24px;
   height: 24px;
   color: var(--clr-primary);
+  flex-shrink: 0; /* This is the fix! */
 }
 .promise-card h3 {
   font-size: 1.5rem;
@@ -2147,3 +2148,302 @@ textarea.form-input {
 .switching-protocol-section {
     margin-top: -1px; /* Ensure it blends with hero if needed */
 }
+/* --- 33. HOMEPAGE v3: CINEMATIC HERO --- */
+.cinematic-hero {
+  height: 120vh; /* Taller hero to allow for scroll-reveal effect */
+  position: sticky; /* Sticks to the top */
+  top: 0;
+  z-index: 1;
+}
+.hero-background-media {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -2;
+}
+.hero-background-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* Darker fade to black at the bottom */
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, #000 95%);
+}
+.hero-content-container {
+  height: 100vh; /* Content is centered in the main viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* --- 34. HOMEPAGE v3: "WHAT WE DO" SHOWCASE --- */
+.service-showcase-section {
+  padding: 10rem 0;
+  position: relative;
+  z-index: 2; /* This slides up ON TOP of the hero */
+  background-color: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+}
+.service-showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  position: relative;
+}
+.showcase-sticky-nav {
+  position: sticky;
+  top: 150px;
+  height: max-content;
+}
+.showcase-sticky-nav .process-description {
+  font-size: 1.1rem;
+  color: var(--clr-text-secondary);
+  line-height: 1.7;
+  max-width: 450px;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+}
+.showcase-sticky-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.showcase-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.showcase-nav-link .nav-number {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-text-secondary);
+  transition: color 0.3s ease;
+}
+.showcase-nav-link .nav-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--clr-text-secondary);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+.showcase-nav-link:hover .nav-title {
+  opacity: 1;
+  color: var(--clr-text);
+}
+.showcase-nav-link.is-active {
+  background-color: var(--clr-bg-light);
+}
+.showcase-nav-link.is-active .nav-number {
+  color: var(--clr-primary);
+}
+.showcase-nav-link.is-active .nav-title {
+  color: var(--clr-text);
+  opacity: 1;
+}
+
+/* Right Scrolling Content */
+.showcase-scrolling-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20rem; /* Creates space for scroll-triggering */
+}
+.showcase-dossier {
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  background-color: var(--clr-bg-medium);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  opacity: 0.3; /* Dimmed by default */
+  transition: opacity 0.4s ease;
+}
+.showcase-dossier.is-active {
+  opacity: 1; /* Lit up by JS */
+}
+.dossier-image {
+  aspect-ratio: 16 / 9;
+  border-bottom: 1px solid var(--clr-border);
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+}
+.dossier-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+}
+.dossier-content {
+  padding: 2.5rem;
+}
+.dossier-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.dossier-text {
+  font-size: 1.1rem;
+  color: var(--clr-text-secondary);
+  line-height: 1.7;
+}
+
+/* --- 35. HOMEPAGE v3: DUAL CTA --- */
+.final-cta-section {
+  padding: 10rem 0;
+  background-color: var(--clr-bg-medium);
+  border-top: 1px solid var(--clr-border);
+  position: relative;
+  z-index: 6;
+}
+.cta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 4rem;
+}
+.cta-card {
+  border: 1px solid var(--clr-border);
+  border-radius: 12px;
+  padding: 3rem;
+  text-align: left;
+  transition: all 0.3s ease;
+  background-color: var(--clr-bg);
+}
+.cta-card:hover {
+  background-color: var(--clr-bg-light);
+  border-color: var(--clr-primary);
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px rgba(var(--clr-primary-rgb), 0.2);
+}
+.cta-card-overline {
+  display: block;
+  color: var(--clr-text-secondary);
+  margin-bottom: 0.5rem;
+}
+.cta-card-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--clr-text);
+  transition: color 0.3s ease;
+}
+.cta-card:hover .cta-card-title {
+  color: var(--clr-primary);
+}
+
+/* --- 36. RESPONSIVENESS for v3 --- */
+@media (max-width: 992px) {
+  .service-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+  .showcase-sticky-nav {
+    position: relative;
+    top: auto;
+    text-align: center;
+  }
+  .showcase-sticky-nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .showcase-nav-link .nav-title {
+    font-size: 1.1rem;
+  }
+  .showcase-scrolling-content {
+    gap: 4rem;
+  }
+  .dossier-content {
+    padding: 2rem;
+  }
+  .dossier-title {
+    font-size: 1.5rem;
+  }
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--clr-text);
+}
+
+
+/* 3) Hero fixes: ensure hero does not get covered by header and remains responsive */
+.hero-section {
+  min-height: calc(100vh - var(--header-height)); /* keep hero visible below header */
+  padding-top: calc(var(--header-height) + 2rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: visible;
+  box-sizing: border-box;
+}
+
+/* Video/image wrapper should never overflow container */
+.hero-video-wrapper,
+.hero-media {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.hero-content {
+  position: relative;
+  z-index: 5; /* always above hero-media / background */
+}
+
+/* Prevent huge images from breaking layout */
+.hero-video-wrapper img,
+.showcase-dossier img,
+.dossier-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* 4) Showcase / dossiers - avoid overlapping and grid collapse */
+.service-showcase-grid,
+.showcase-grid,
+.cta-grid {
+  gap: 2rem;
+}
+.showcase-dossier {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.006));
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.dossier-image {
+  min-width: 260px;
+  max-width: 420px;
+  flex: 0 0 35%;
+  overflow: hidden;
+}
+.dossier-content {
+  padding: 2rem;
+  flex: 1 1 auto;
+}
+
+/* 5) Small fixes: language dropdown, z-index for dropdowns 
+.lang-options,
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  background: var(--clr-bg);
+  border: 1px solid var(--clr-border);
+  padding: 0.5rem;
+  border-radius: 6px;
+  z-index: 10010;
+}
+.lang-options.show,
+.nav-dropdown-menu.show {
+  display: block;
+}*/
