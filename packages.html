@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Packages - Nekdigi</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="packages-page.css" />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="container">
+        <a href="index.html" class="logo" data-lang-key="logo"> Nek<span>digi</span> </a>
+
+        <div class="nav-links">
+          <a href="index.html" data-lang-key="navHome">Home</a>
+
+          <div class="nav-dropdown">
+            <a href="about.html" class="nav-drop-toggle" data-lang-key="navAbout">About Us <i data-feather="chevron-down" class="nav-arrow"></i></a>
+            <div class="nav-dropdown-content">
+              <a href="about.html" data-lang-key="navAboutSub">About Us</a>
+              <a href="switching-service.html" data-lang-key="navSwitching">Switching Service</a>
+            </div>
+          </div>
+
+          <a href="what-we-do.html" data-lang-key="navWhatWeDo">What We Do</a>
+          <a href="how-it-works.html" data-lang-key="navHowItWorks">How Does It Work</a>
+          <a href="packages.html" data-lang-key="navPackages" class="active-page">Packages</a>
+          <a href="#" data-lang-key="navCustomers">Customers</a>
+          <a href="contact.html" data-lang-key="navContact">Contact Us</a>
+        </div>
+
+        <div class="nav-controls">
+          <div class="lang-toggle">
+            <button id="lang-en" class="active">EN</button>
+            <span>|</span>
+            <button id="lang-nl">NL</button>
+          </div>
+
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <i data-feather="moon" class="icon-moon"></i>
+            <i data-feather="sun" class="icon-sun"></i>
+          </button>
+
+          <button class="mobile-menu-btn" aria-label="Open menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero-alt">
+        <div class="container">
+          <h1 data-lang-key="packagesTitle">Our Packages</h1>
+          <p class="subtitle" data-lang-key="packagesSubtitle">Select the package that best fits your business and watch it grow.</p>
+        </div>
+      </section>
+
+      <section class="packages-section">
+        <div class="container">
+          <div class="package-tabs">
+            <button class="package-tab-btn active" data-target="pkg-essential" data-lang-key="formPkg1Title">Essential Launch</button>
+            <button class="package-tab-btn" data-target="pkg-growth" data-lang-key="formPkg2Title">Growth Engine</button>
+            <button class="package-tab-btn" data-target="pkg-dominance" data-lang-key="formPkg3Title">Digital Dominance</button>
+          </div>
+
+          <div class="package-content-area">
+            <div class="package-card active" id="pkg-essential">
+              <div class="package-info">
+                <h2 data-lang-key="formPkg1Title">Essential Launch</h2>
+                <p data-lang-key="pkgEssentialDesc">
+                  Perfect for establishing online visibility. A professional presence and all tools to run your business.
+                </p>
+                <div class="package-price">
+                  <span class="price-amount">€159</span>
+                  <span class="price-term" data-lang-key="pkgPerMonth">/ month</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary" data-lang-key="pkgSelect">Select Package <i data-feather="arrow-right"></i></a>
+              </div>
+              <div class="package-features">
+                <h3 data-lang-key="pkgWhatsIncluded">What's included:</h3>
+                <ul class="features-list">
+                  <li class="included" data-lang-key="featDomain">Domain Name (.nl/.com included)</li>
+                  <li class="included" data-lang-key="featHosting">Hosting + SSL Certificate</li>
+                  <li class="included" data-lang-key="featWebsite">Website + Mobile (Responsive)</li>
+                  <li class="included" data-lang-key="featWhatsapp">WhatsApp & Chat integration</li>
+                  <li class="included" data-lang-key="featGoogleSearch">Google Search & Maps Optimization</li>
+                  <li class="included" data-lang-key="featBasicSEO">Basic SEO Optimization</li>
+                  <li class="included" data-lang-key="featEmail">Professional Email Addresses</li>
+                  <li class="included" data-lang-key="featCMS">Content Management System (CMS)</li>
+                  <li class="included" data-lang-key="featAnalytics">Google Analytics Setup</li>
+                  <li class="included" data-lang-key="featSocialMedia">Social Media Integration</li>
+                  <li class="included" data-lang-key="featStrategyCall">1 Hour strategy call per month</li>
+                  <li class="included" data-lang-key="featRevisions">2 Revisions per month (max 2 hours)</li>
+                  <li class="excluded" data-lang-key="featAdvancedSEO">Advanced SEO + Google Console setup</li>
+                  <li class="excluded" data-lang-key="featPerfReport">Advanced performance report & analytics</li>
+                  <li class="excluded" data-lang-key="featCustomDesign">Custom web design</li>
+                  <li class="excluded" data-lang-key="featBlog">Blog function implementation</li>
+                  <li class="excluded" data-lang-key="featEmailMarketing">Automated email marketing integration</li>
+                  <li class="excluded" data-lang-key="featSupportHours10">Up to 10 hours of monthly support</li>
+                  <li class="excluded" data-lang-key="featGrowthStrategy">Design: SEO, growth & conversion strategy</li>
+                  <li class="excluded" data-lang-key="featSupportHours15">15 hours of website service & support</li>
+                  <li class="excluded" data-lang-key="featKeywordResearch">Keyword research & competitor analysis</li>
+                  <li class="excluded" data-lang-key="featUnlimitedMods">Unlimited modifications</li>
+                  <li class="excluded" data-lang-key="featMonthlyStrategy">Monthly business strategy sessions</li>
+                  <li class="excluded" data-lang-key="featManager">Dedicated Relationship Manager</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="package-card" id="pkg-growth">
+              <div class="package-info">
+                <h2 data-lang-key="formPkg2Title">Growth Engine</h2>
+                <p data-lang-key="pkgGrowthDesc">The ideal choice for start-ups looking to grow. No start-up fees, no commissions, clear terms.</p>
+                <div class="package-price">
+                  <span class="price-amount">€239</span>
+                  <span class="price-term" data-lang-key="pkgPerMonth">/ month</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary" data-lang-key="pkgSelect">Select Package <i data-feather="arrow-right"></i></a>
+              </div>
+              <div class="package-features">
+                <h3 data-lang-key="pkgWhatsIncluded">What's included:</h3>
+                <ul class="features-list">
+                  <li class="included" data-lang-key="featDomain">Domain Name (.nl/.com included)</li>
+                  <li class="included" data-lang-key="featHosting">Hosting + SSL Certificate</li>
+                  <li class="included" data-lang-key="featWebsite">Website + Mobile (Responsive)</li>
+                  <li class="included" data-lang-key="featWhatsapp">WhatsApp & Chat integration</li>
+                  <li class="included" data-lang-key="featGoogleSearch">Google Search & Maps Optimization</li>
+                  <li class="included" data-lang-key="featBasicSEO">Basic SEO Optimization</li>
+                  <li class="included" data-lang-key="featEmail">Professional Email Addresses</li>
+                  <li class="included" data-lang-key="featCMS">Content Management System (CMS)</li>
+                  <li class="included" data-lang-key="featAnalytics">Google Analytics Setup</li>
+                  <li class="included" data-lang-key="featSocialMedia">Social Media Integration</li>
+                  <li class="included" data-lang-key="featStrategyCall">1 Hour strategy call per month</li>
+                  <li class="included" data-lang-key="featRevisions">2 Revisions per month (max 2 hours)</li>
+                  <li class="included" data-lang-key="featAdvancedSEO">Advanced SEO + Google Console setup</li>
+                  <li class="included" data-lang-key="featPerfReport">Advanced performance report & analytics</li>
+                  <li class="included" data-lang-key="featCustomDesign">Custom web design</li>
+                  <li class="included" data-lang-key="featBlog">Blog function implementation</li>
+                  <li class="included" data-lang-key="featEmailMarketing">Automated email marketing integration</li>
+                  <li class="included" data-lang-key="featSupportHours10">Up to 10 hours of monthly support</li>
+                  <li class="included" data-lang-key="featGrowthStrategy">Design: SEO, growth & conversion strategy</li>
+                  <li class="excluded" data-lang-key="featSupportHours15">15 hours of website service & support</li>
+                  <li class="excluded" data-lang-key="featKeywordResearch">Keyword research & competitor analysis</li>
+                  <li class="excluded" data-lang-key="featUnlimitedMods">Unlimited modifications</li>
+                  <li class="excluded" data-lang-key="featMonthlyStrategy">Monthly business strategy sessions</li>
+                  <li class="excluded" data-lang-key="featManager">Dedicated Relationship Manager</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="package-card" id="pkg-dominance">
+              <div class="package-info">
+                <h2 data-lang-key="formPkg3Title">Digital Dominance</h2>
+                <p data-lang-key="pkgDominanceDesc">To boost customer retention and engagement, aimed at engaging existing and new customers.</p>
+                <div class="package-price">
+                  <span class="price-amount">€299</span>
+                  <span class="price-term" data-lang-key="pkgPerMonth">/ month</span>
+                </div>
+                <a href="contact.html" class="btn btn-primary" data-lang-key="pkgSelect">Select Package <i data-feather="arrow-right"></i></a>
+              </div>
+              <div class="package-features">
+                <h3 data-lang-key="pkgWhatsIncluded">What's included:</h3>
+                <ul class="features-list">
+                  <li class="included" data-lang-key="featDomain">Domain Name (.nl/.com included)</li>
+                  <li class="included" data-lang-key="featHosting">Hosting + SSL Certificate</li>
+                  <li class="included" data-lang-key="featWebsite">Website + Mobile (Responsive)</li>
+                  <li class="included" data-lang-key="featWhatsapp">WhatsApp & Chat integration</li>
+                  <li class="included" data-lang-key="featGoogleSearch">Google Search & Maps Optimization</li>
+                  <li class="included" data-lang-key="featBasicSEO">Basic SEO Optimization</li>
+                  <li class="included" data-lang-key="featEmail">Professional Email Addresses</li>
+                  <li class="included" data-lang-key="featCMS">Content Management System (CMS)</li>
+                  <li class="included" data-lang-key="featAnalytics">Google Analytics Setup</li>
+                  <li class="included" data-lang-key="featSocialMedia">Social Media Integration</li>
+                  <li class="included" data-lang-key="featStrategyCall">1 Hour strategy call per month</li>
+                  <li class="included" data-lang-key="featRevisions">2 Revisions per month (max 2 hours)</li>
+                  <li class="included" data-lang-key="featAdvancedSEO">Advanced SEO + Google Console setup</li>
+                  <li class="included" data-lang-key="featPerfReport">Advanced performance report & analytics</li>
+                  <li class="included" data-lang-key="featCustomDesign">Custom web design</li>
+                  <li class="included" data-lang-key="featBlog">Blog function implementation</li>
+                  <li class="included" data-lang-key="featEmailMarketing">Automated email marketing integration</li>
+                  <li class="included" data-lang-key="featSupportHours10">Up to 10 hours of monthly support</li>
+                  <li class="included" data-lang-key="featGrowthStrategy">Design: SEO, growth & conversion strategy</li>
+                  <li class="included" data-lang-key="featSupportHours15">15 hours of website service & support</li>
+                  <li class="included" data-lang-key="featKeywordResearch">Keyword research & competitor analysis</li>
+                  <li class="included" data-lang-key="featUnlimitedMods">Unlimited modifications</li>
+                  <li class="included" data-lang-key="featMonthlyStrategy">Monthly business strategy sessions</li>
+                  <li class="included" data-lang-key="featManager">Dedicated Relationship Manager</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="addons-section">
+        <div class="container">
+          <div class="section-header">
+            <h2 data-lang-key="addonsTitle">Add-ons</h2>
+          </div>
+          <div class="addon-card">
+            <div class="addon-info">
+              <h3 data-lang-key="addonMapsTitle">Google Maps Ads</h3>
+              <p data-lang-key="addonMapsDesc">
+                Boost people's love for business on Google. We make sure you stand out by boosting visibility with targeted keywords.
+              </p>
+            </div>
+            <div class="addon-price">
+              <span class="price-amount">€49</span>
+              <span class="price-term" data-lang-key="pkgPerMonth">/ month</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="main-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="index.html" class="logo" data-lang-key="logo">Nek<span>digi</span></a>
+            <p data-lang-key="footerAbout">
+              We are a full-service digital agency dedicated to helping businesses grow and succeed in the digital world.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-lang-key="footerLinks">Quick Links</h4>
+            <ul>
+              <li><a href="about.html" data-lang-key="navAbout">About Us</a></li>
+              <li><a href="index.html#services" data-lang-key="navServices">Services</a></li>
+              <li><a href="#" data-lang-key="footerPortfolio">Portfolio</a></li>
+              <li><a href="contact.html" data-lang-key="navContact">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-lang-key="navServices">Services</h4>
+            <ul>
+              <li><a href="#" data-lang-key="service1TitleShort">Strategy & Branding</a></li>
+              <li><a href="#" data-lang-key="service2TitleShort">Design & Development</a></li>
+              <li><a href="#" data-lang-key="service3TitleShort">Optimize & Traffic</a></li>
+              <li><a href="#" data-lang-key="footerSEO">SEO & Marketing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-lang-key="footerContact">Get in Touch</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <i data-feather="map-pin"></i>
+                <span data-lang-key="footerAddress">123 Digital Ave, Amsterdam, NL</span>
+              </li>
+              <li>
+                <i data-feather="mail"></i>
+                <a href="mailto:info@nekdigital.nl">info@nekdigital.nl</a>
+              </li>
+              <li>
+                <i data-feather="phone"></i>
+                <a href="tel:+31648217892">+31 6 48217892</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> Nekdigi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

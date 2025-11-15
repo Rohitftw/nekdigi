@@ -66,13 +66,14 @@ body.light-mode .timeline-line {
 /* The dot on the timeline */
 .timeline-dot {
   position: absolute;
-  top: 10px;
+  top: 50%; /* <-- UPDATED from 10px */
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background-color: var(--color-red);
   border: 3px solid var(--color-black);
   z-index: 2;
+  /* NOTE: We will add the vertical transform in the rules below */
 }
 body.light-mode .timeline-dot {
   border-color: var(--color-white);
@@ -87,7 +88,8 @@ body.light-mode .timeline-dot {
 }
 .timeline-item:nth-child(odd) .timeline-dot {
   right: -8px; /* (16px / 2) */
-  transform: translateX(50%);
+  /* UPDATED: Added translateY(-50%) to center the dot */
+  transform: translateX(50%) translateY(-50%);
 }
 
 /* Even items (2, 4, 6) on the RIGHT */
@@ -99,7 +101,8 @@ body.light-mode .timeline-dot {
 }
 .timeline-item:nth-child(even) .timeline-dot {
   left: -8px; /* (16px / 2) */
-  transform: translateX(-50%);
+  /* UPDATED: Added translateY(-50%) to center the dot */
+  transform: translateX(-50%) translateY(-50%);
 }
 
 /* Clearfix for the container */
@@ -113,17 +116,25 @@ body.light-mode .timeline-dot {
   background: var(--color-grey-dark);
   padding: 2rem;
   border-radius: 8px;
-  border: 1px solid #333;
+  /* UPDATED: Changed border color */
+  border: 1px solid var(--color-red);
+
+  /* ADDED: Glow effect using box-shadow */
+  box-shadow: 0 0 12px -2px var(--color-red);
 
   /* Animation: Start hidden */
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* UPDATED: Added transitions for the new properties */
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 body.light-mode .timeline-content {
   background: var(--color-white);
-  border: 1px solid var(--color-grey-light);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  /* UPDATED: Changed border color */
+  border: 1px solid var(--color-red);
+
+  /* UPDATED: Replaced original shadow with the red glow */
+  box-shadow: 0 0 12px -2px var(--color-red);
 }
 
 /* Animation: When "in-view" class is added by JS */
@@ -145,7 +156,7 @@ body.light-mode .timeline-content {
   margin-bottom: 1rem;
 }
 body.light-mode .timeline-content h3 {
-  color: var(--color-red);
+  color: var(--color-black);
 }
 
 .timeline-content p {
@@ -193,4 +204,12 @@ body.light-mode .timeline-content h3 {
     left: 20px;
     transform: translateX(-50%);
   }
+}
+/* ADDED: Hover effect for a more intense glow */
+.timeline-content:hover {
+  box-shadow: 0 0 20px 0px var(--color-red);
+}
+/* ADDED: Hover effect for light mode */
+body.light-mode .timeline-content:hover {
+  box-shadow: 0 0 20px 0px var(--color-red);
 }

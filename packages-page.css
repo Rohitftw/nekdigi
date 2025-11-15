@@ -1,0 +1,288 @@
+/* ================================================
+   PACKAGES PAGE STYLES
+   ================================================ */
+
+/* --- General Page Styles --- */
+.nav-links a.active-page[data-lang-key="navPackages"] {
+  color: var(--color-red);
+}
+
+/* --- Page Hero --- */
+.page-hero-alt {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-grey-dark);
+}
+body.light-mode .page-hero-alt {
+  background-color: var(--color-grey-light);
+}
+.page-hero-alt h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+body.light-mode .page-hero-alt h1 {
+  color: var(--color-black);
+}
+.page-hero-alt .subtitle {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* --- Packages Section --- */
+.packages-section {
+  padding: 3rem 0 5rem 0;
+}
+.package-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+  background-color: var(--color-grey-dark);
+  border-radius: 8px;
+  padding: 0.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.light-mode .package-tabs {
+  background-color: var(--color-grey-light);
+}
+.package-tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-grey-medium);
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  flex: 1;
+}
+body.light-mode .package-tab-btn {
+  color: var(--color-grey-medium);
+}
+.package-tab-btn:hover {
+  color: var(--color-white);
+}
+body.light-mode .package-tab-btn:hover {
+  color: var(--color-black);
+}
+.package-tab-btn.active {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+body.light-mode .package-tab-btn.active {
+  color: var(--color-white);
+}
+
+/* --- Package Card --- */
+.package-card {
+  background: var(--color-grey-dark);
+  border: 1px solid var(--color-red);
+  box-shadow: 0 0 20px -5px var(--color-red);
+  border-radius: 12px;
+  padding: 3rem;
+  /* Grid for 2-col layout */
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+}
+body.light-mode .package-card {
+  background: var(--color-white);
+  box-shadow: 0 0 20px -5px var(--color-red);
+}
+
+/* Hide non-active cards */
+.package-card {
+  display: none;
+}
+.package-card.active {
+  display: grid;
+}
+
+.package-info h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+body.light-mode .package-info h2 {
+  color: var(--color-black);
+}
+.package-info p {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin-bottom: 2rem;
+}
+.package-price {
+  margin-bottom: 2rem;
+}
+.package-price .price-amount {
+  font-size: 3rem;
+  font-weight: 800;
+}
+body.light-mode .package-price .price-amount {
+  color: var(--color-black);
+}
+.package-price .price-term {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin-left: 0.5rem;
+}
+.package-info .btn {
+  font-size: 1.1rem;
+  padding: 0.85rem 2rem;
+}
+
+/* Features List */
+.package-features h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+body.light-mode .package-features h3 {
+  color: var(--color-black);
+}
+.features-list {
+  list-style: none;
+  column-count: 2;
+  column-gap: 2rem;
+}
+.features-list li {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  line-height: 1.4;
+}
+.features-list li::before {
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Included vs. Excluded Styles */
+.features-list li.included {
+  color: var(--color-white);
+}
+body.light-mode .features-list li.included {
+  color: var(--color-black);
+}
+.features-list li.included::before {
+  content: "✓";
+  color: var(--color-red);
+}
+
+.features-list li.excluded {
+  color: var(--color-grey-medium);
+  opacity: 0.6;
+}
+body.light-mode .features-list li.excluded {
+  color: var(--color-grey-medium);
+}
+.features-list li.excluded::before {
+  content: "○";
+  color: var(--color-grey-medium);
+  font-size: 0.7rem;
+  margin-top: 6px;
+}
+
+/* --- Add-ons Section --- */
+.addons-section {
+  padding: 4rem 0;
+  background-color: var(--color-grey-dark);
+}
+body.light-mode .addons-section {
+  background-color: var(--color-grey-light);
+}
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+}
+body.light-mode .section-header h2 {
+  color: var(--color-black);
+}
+.addon-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--color-black);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body.light-mode .addon-card {
+  background: var(--color-white);
+  border-color: var(--color-grey-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.addon-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+body.light-mode .addon-card h3 {
+  color: var(--color-red);
+}
+.addon-card p {
+  color: var(--color-grey-medium);
+  max-width: 500px;
+}
+.addon-price .price-amount {
+  font-size: 2rem;
+  font-weight: 700;
+}
+body.light-mode .addon-price .price-amount {
+  color: var(--color-black);
+}
+.addon-price .price-term {
+  color: var(--color-grey-medium);
+  margin-left: 0.25rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .package-card {
+    grid-template-columns: 1fr;
+    padding: 2.5rem;
+  }
+  .features-list {
+    column-count: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .package-tabs {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+  .package-tab-btn {
+    font-size: 0.9rem;
+    padding: 0.8rem 1rem;
+  }
+  .package-card {
+    padding: 2rem 1.5rem;
+  }
+  .package-info h2 {
+    font-size: 2rem;
+  }
+  .package-price .price-amount {
+    font-size: 2.5rem;
+  }
+  .addon-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  .addon-price {
+    margin-top: 1rem;
+  }
+}

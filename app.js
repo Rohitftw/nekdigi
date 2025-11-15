@@ -192,3 +192,31 @@ if (timelineSection && timelineProgress && timelineItems.length > 0) {
   // Run once on load
   updateTimeline();
 }
+// --- 8. PACKAGE TAB SWITCHER ---
+// Wait for the DOM to be loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const tabButtons = document.querySelectorAll(".package-tab-btn");
+  const packageCards = document.querySelectorAll(".package-card");
+
+  // Only run if tabs exist on this page
+  if (tabButtons.length > 0 && packageCards.length > 0) {
+    tabButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const targetId = button.getAttribute("data-target");
+
+        // 1. Update Buttons: Remove 'active' from all, add to clicked
+        tabButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        // 2. Update Cards: Hide all, show target
+        packageCards.forEach((card) => {
+          if (card.id === targetId) {
+            card.classList.add("active");
+          } else {
+            card.classList.remove("active");
+          }
+        });
+      });
+    });
+  }
+});
