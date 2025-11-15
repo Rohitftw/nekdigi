@@ -1,0 +1,214 @@
+/* ================================================
+   ABOUT PAGE STYLES (aboutpage.css)
+   ================================================ */
+
+/* --- General Page Styles --- */
+
+/* This highlights the current page in the nav */
+.nav-drop-toggle.active-page {
+  color: var(--color-red) !important;
+}
+
+/* This is a reusable header for sections */
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem auto;
+}
+.section-header h2 {
+  font-size: 2.5rem;
+}
+/* (REMOVED: Section headers are no longer red) */
+
+/* --- 1. Page Hero Section --- */
+.page-hero {
+  /* Dark background for the hero */
+  background-color: var(--color-grey-dark);
+  padding: 4rem 0;
+}
+body.light-mode .page-hero {
+  /* Light background in light mode */
+  background-color: var(--color-grey-light);
+}
+.page-hero .container {
+  max-width: 900px;
+  text-align: center;
+}
+.page-hero-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 2.5rem;
+  object-fit: cover;
+  max-height: 400px;
+}
+.page-hero h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1.5rem;
+}
+/* (REMOVED: Hero h1 is no longer red) */
+
+.page-hero .page-hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  line-height: 1.7;
+}
+
+/* --- 2. Why Neksoft Section (Cards) --- */
+.why-section {
+  /* Alternating background color (light) */
+  background-color: var(--color-black);
+  padding: 5rem 0;
+}
+body.light-mode .why-section {
+  background-color: var(--color-white);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.why-card {
+  background: var(--color-grey-dark);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+body.light-mode .why-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+/* Glow hover effect */
+.why-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5); /* Red glow */
+}
+/* Ensure light mode glow is also red */
+body.light-mode .why-card:hover {
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.why-card i {
+  width: 32px;
+  height: 32px;
+  color: var(--color-red);
+  margin-bottom: 1.5rem;
+}
+
+.why-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+/* KEPT: Card h3 is red in light mode */
+body.light-mode .why-card h3 {
+  color: var(--color-red);
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: var(--color-grey-medium);
+  line-height: 1.6;
+}
+
+/* --- 3. Specials Section (List) --- */
+.specials-section {
+  /* Alternating background color (dark) */
+  background-color: var(--color-grey-dark);
+  padding: 5rem 0;
+}
+body.light-mode .specials-section {
+  background-color: var(--color-grey-light);
+}
+
+.specials-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.special-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  background-color: var(--color-black);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+body.light-mode .special-item {
+  background-color: var(--color-white);
+  border: 1px solid #ddd;
+}
+/* Glow hover effect */
+.special-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5); /* Red glow */
+}
+/* Ensure light mode glow is also red */
+body.light-mode .special-item:hover {
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.special-item i {
+  width: 28px;
+  height: 28px;
+  color: var(--color-red);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.special-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+/* KEPT: Special item h3 is red in light mode */
+body.light-mode .special-item h3 {
+  color: var(--color-red);
+}
+
+.special-item p {
+  font-size: 0.95rem;
+  color: var(--color-grey-medium);
+  line-height: 1.6;
+}
+
+/* ================================================
+   ABOUT PAGE RESPONSIVE
+   ================================================ */
+
+@media (max-width: 992px) {
+  /* Tablet: Why-grid goes to 2 columns */
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile: All grids go to 1 column */
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .special-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  .special-item i {
+    margin-top: 0;
+  }
+}

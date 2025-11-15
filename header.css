@@ -1,0 +1,243 @@
+/* ================================================
+   2. HEADER & NAVIGATION STYLES
+   ================================================ */
+
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(20, 20, 20, 0.8); /* Dark background with blur */
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--color-grey-dark);
+  width: 100%;
+}
+body.light-mode .main-header {
+  background-color: rgba(255, 255, 255, 0.8); /* Light background with blur */
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.main-header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--color-white);
+  text-decoration: none;
+}
+body.light-mode .logo {
+  color: var(--color-black);
+}
+.logo span {
+  color: var(--color-red);
+}
+.logo:hover {
+  opacity: 1;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* === THE FIX, PART 1 === */
+/* We apply the padding/margin to ALL links and dropdowns
+   so they have the same height and align correctly. */
+.nav-links a,
+.nav-dropdown {
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+
+/* This styles the regular nav links */
+.nav-links a {
+  font-weight: 500;
+  color: var(--color-grey-light);
+  text-decoration: none;
+}
+body.light-mode .nav-links a {
+  color: var(--color-grey-medium);
+}
+.nav-links a:hover {
+  color: var(--color-red);
+  opacity: 1;
+}
+
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.lang-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-grey-medium);
+  font-weight: 600;
+  padding: 0;
+}
+.lang-toggle button.active {
+  color: var(--color-red);
+}
+.lang-toggle span {
+  color: var(--color-grey-dark);
+}
+body.light-mode .lang-toggle span {
+  color: var(--color-grey-light);
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-white);
+  /* Fix icon alignment */
+  display: inline-flex;
+  align-items: center;
+}
+body.light-mode #theme-toggle {
+  color: var(--color-black);
+}
+
+/* Mobile menu icon - logic not implemented, just style */
+.mobile-menu-btn {
+  display: none; /* Hidden on desktop by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-white);
+}
+body.light-mode .mobile-menu-btn {
+  color: var(--color-black);
+}
+
+/* --- Header Responsive --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide for simple mobile */
+  }
+  .mobile-menu-btn {
+    display: inline-flex; /* Show mobile menu button */
+    align-items: center;
+  }
+}
+
+/* ================================================
+   3. HEADER DROPDOWN STYLES
+   ================================================ */
+
+.nav-dropdown {
+  position: relative;
+  display: inline-block;
+  /* padding-bottom is now applied above */
+}
+
+/* This styles the dropdown toggle link ("About Us") */
+.nav-drop-toggle {
+  font-weight: 500;
+  color: var(--color-grey-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer; /* So it feels like a button */
+  /* === THE FIX, PART 2 === */
+  /* We must remove the default link padding 
+     since the parent .nav-dropdown has it now */
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+body.light-mode .nav-drop-toggle {
+  color: var(--color-grey-medium);
+}
+.nav-drop-toggle:hover {
+  color: var(--color-red);
+  opacity: 1;
+}
+
+.nav-drop-toggle .nav-arrow {
+  width: 1rem;
+  height: 1rem;
+  transition: transform var(--transition-fast);
+}
+
+.nav-dropdown:hover .nav-drop-toggle {
+  color: var(--color-red);
+}
+.nav-dropdown:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%; /* Position right below the toggle */
+  left: -1.5rem; /* Align with padding */
+  min-width: 200px;
+  padding: 1rem 0;
+  /* The 10px margin is removed to close the gap */
+  margin-top: 0;
+
+  background-color: var(--color-black);
+  border: 1px solid var(--color-grey-dark);
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+
+  /* Fade-in animation */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-fast);
+}
+body.light-mode .nav-dropdown-content {
+  background-color: var(--color-white);
+  border-color: var(--color-grey-light);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Show dropdown on hover */
+.nav-dropdown:hover .nav-dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* This styles the links *inside* the dropdown */
+.nav-dropdown-content a {
+  color: var(--color-grey-light);
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap; /* Prevent line breaks */
+
+  /* === THE FIX, PART 3 === */
+  /* Remove the padding/margin from the parent */
+  padding-bottom: 0.75rem;
+  margin-bottom: 0;
+}
+body.light-mode .nav-dropdown-content a {
+  color: var(--color-black);
+}
+
+.nav-dropdown-content a:hover {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  opacity: 1;
+}
+body.light-mode .nav-dropdown-content a:hover {
+  color: var(--color-white);
+}
+/* Add this to the end of the 
+   .nav-links a:hover rule */
+
+.nav-links a.active-page {
+  color: var(--color-red);
+}

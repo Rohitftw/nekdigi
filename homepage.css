@@ -1,0 +1,403 @@
+/* ================================================
+   3. HOMEPAGE STYLES
+   ================================================ */
+
+/* --- Hero Section --- */
+.hero {
+    /* We add padding, but also a min-height to ensure the image is visible */
+    padding: 6rem 0;
+    min-height: 450px; 
+    text-align: center;
+    
+    /* === NEW: Background Image === */
+    /* Replace with your image path */
+    background-image: url('https://placehold.co/1600x900/141414/E50914?text=Hero+Image+Here');
+    background-size: cover;
+    background-position: center center;
+    position: relative; /* Needed for the overlay */
+    
+    /* We need to use flex to center the content vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* === NEW: Dark Overlay === */
+/* This dark layer sits between the image and the text */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Dark overlay (adjust 0.6 to make it darker or lighter) */
+    background-color: rgba(20, 20, 20, 0.6); 
+    z-index: 1; /* Sits below the content */
+}
+
+/* We must make the container and its content sit on top of the overlay */
+.hero .container {
+    max-width: 800px;
+    position: relative; /* Sit on top of the overlay */
+    z-index: 2;
+}
+/* === End of New Code === */
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+.hero h1 span {
+    color: var(--color-red);
+}
+/* .subtitle style is in global.css */
+.hero .hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* --- About Section --- */
+.about-section {
+    background-color: var(--color-grey-dark);
+}
+body.light-mode .about-section {
+    background-color: var(--color-grey-light);
+}
+.about-section .container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+.about-content {
+    flex-basis: 50%;
+}
+.about-image {
+    flex-basis: 50%;
+}
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+/* .tagline style is in global.css */
+.about-content h2 {
+    margin-bottom: 1.5rem;
+}
+.about-content p {
+    margin-bottom: 1rem;
+}
+
+/* --- Trusted By Carousel --- */
+.trusted-by {
+    padding: 3rem 0;
+}
+.trusted-by h3 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-grey-medium);
+    margin-bottom: 3rem;
+}
+.logo-carousel {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.logo-carousel::before,
+.logo-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+}
+.logo-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, var(--color-black) 0%, transparent 100%);
+}
+.logo-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, var(--color-black) 0%, transparent 100%);
+}
+body.light-mode .logo-carousel::before {
+    background: linear-gradient(to right, var(--color-white) 0%, transparent 100%);
+}
+body.light-mode .logo-carousel::after {
+    background: linear-gradient(to left, var(--color-white) 0%, transparent 100%);
+}
+
+.logo-carousel-track {
+    display: flex;
+    width: calc(200px * 14); /* 7 logos * 2 sets */
+    animation: scroll 40s linear infinite;
+}
+.logo-carousel-slide {
+    width: 200px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+.logo-carousel-slide img {
+    max-width: 120px;
+    filter: grayscale(1) opacity(0.6);
+    transition: var(--transition-fast);
+}
+.logo-carousel-slide img:hover {
+    filter: grayscale(0) opacity(1);
+}
+body.light-mode .logo-carousel-slide img {
+    filter: grayscale(1) opacity(0.4);
+}
+body.light-mode .logo-carousel-slide img:hover {
+    filter: grayscale(0) opacity(1);
+}
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* --- Services Section (NEW STICKY VERSION) --- */
+.services-section-sticky .services-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3.5rem auto;
+}
+.services-section-sticky .subtitle {
+    margin-bottom: 0;
+}
+
+.services-sticky-layout {
+    display: flex;
+    gap: 3rem;
+    position: relative;
+}
+
+.services-nav-sticky {
+    flex-basis: 30%;
+    position: sticky;
+    top: 90px; /* 70px header + 20px breathing room */
+    align-self: flex-start; /* Ensures it sticks to the top of its container */
+    height: 300px; /* Needs a defined height to stick properly */
+}
+.services-nav-sticky nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-left: 3px solid var(--color-grey-dark);
+}
+body.light-mode .services-nav-sticky nav {
+    border-left: 3px solid var(--color-grey-light);
+}
+
+.service-nav-link {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--color-grey-medium);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    margin-left: -3px; /* Aligns with parent border */
+    transition: all var(--transition-fast);
+}
+.service-nav-link:hover {
+    color: var(--color-white);
+    opacity: 1;
+}
+body.light-mode .service-nav-link:hover {
+    color: var(--color-black);
+}
+
+.service-nav-link.active {
+    color: var(--color-red);
+    border-left-color: var(--color-red);
+}
+
+.services-content {
+    flex-basis: 70%;
+}
+
+.service-panel {
+    background: var(--color-grey-dark);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem; /* Space between panels */
+    min-height: 400px; /* Ensure panel is large enough to trigger scroll */
+}
+body.light-mode .service-panel {
+    background: var(--color-white);
+    border: 1px solid var(--color-grey-light);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.service-panel h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+.service-image {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+.service-panel p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+.service-panel .learn-more {
+    font-weight: 600;
+}
+.service-panel .learn-more i {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+}
+
+
+/* --- FAQ Section --- */
+.faq-section {
+    background-color: var(--color-grey-dark);
+}
+body.light-mode .faq-section {
+    background-color: var(--color-grey-light);
+}
+.faq-section .container {
+    max-width: 800px;
+}
+.faq-section .text-center {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+.faq-section h2 {
+    margin-bottom: 1.5rem;
+}
+.faq-section .subtitle {
+    color: var(--color-grey-medium);
+}
+.faq-accordion details {
+    background: var(--color-black);
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+body.light-mode .faq-accordion details {
+    background: var(--color-white);
+    border: 1px solid #ddd;
+}
+.faq-accordion summary {
+    list-none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+.faq-accordion summary::-webkit-details-marker {
+    display: none;
+}
+.faq-accordion .faq-icon {
+    transition: transform var(--transition-fast);
+}
+.faq-accordion details[open] .faq-icon {
+    transform: rotate(180deg);
+}
+.faq-accordion .faq-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+.faq-accordion .faq-content p {
+    color: var(--color-grey-medium);
+}
+
+
+/* --- Homepage Responsive --- */
+@media (max-width: 992px) {
+    .about-section .container {
+        flex-direction: column;
+    }
+    .about-image {
+        margin-top: 3rem;
+        order: -1; /* Move image to top */
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .hero h1 { font-size: 2.75rem; }
+    h2 { font-size: 1.75rem; }
+
+    /* Sticky services responsive */
+    .services-sticky-layout {
+        flex-direction: column;
+    }
+    .services-nav-sticky {
+        position: relative;
+        top: 0;
+        height: auto;
+        flex-basis: 100%;
+        margin-bottom: 2rem;
+    }
+    .services-nav-sticky nav {
+        flex-direction: row;
+        border-left: none;
+        border-bottom: 3px solid var(--color-grey-dark);
+        overflow-x: auto; /* Allow horizontal scroll on mobile */
+    }
+    body.light-mode .services-nav-sticky nav {
+        border-bottom: 3px solid var(--color-grey-light);
+    }
+    .service-nav-link {
+        border-left: none;
+        margin-left: 0;
+        border-bottom: 3px solid transparent;
+        margin-bottom: -3px;
+        text-align: center;
+        flex-shrink: 0; /* Prevent links from shrinking */
+    }
+    .service-nav-link.active {
+        border-left-color: transparent;
+        border-bottom-color: var(--color-red);
+    }
+
+    .services-content {
+        flex-basis: 100%;
+    }
+}
+/* --- Fix for light-mode hero button --- */
+/* This forces the secondary button in the hero
+   to always be white, even in light mode,
+   because the hero background is always dark. */
+
+body.light-mode .hero .btn-secondary {
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+body.light-mode .hero .btn-secondary:hover {
+    background-color: var(--color-white);
+    color: var(--color-black);
+}
+/* --- Fix for light-mode hero text --- */
+/* The hero background is always dark, so the text
+   must always be light, regardless of the theme. */
+body.light-mode .hero h1 {
+    color: var(--color-white);
+}
+
+body.light-mode .hero .subtitle {
+    color: var(--color-grey-light); /* Use light grey */
+}
+
+/* Also, let's fix the default subtitle color
+   which was too dark even in dark mode */
+.hero .subtitle {
+    color: var(--color-grey-light);
+}

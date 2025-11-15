@@ -1,0 +1,232 @@
+/* ================================================
+   CONTACT PAGE STYLES (contactpage.css)
+   ================================================ */
+
+.contact-section {
+  padding: 5rem 0;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Left col smaller, right col larger */
+  gap: 4rem;
+}
+
+/* --- 1. Contact Info (Left Column) --- */
+.contact-info h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+body.light-mode .contact-info h1 {
+  color: var(--color-black);
+}
+
+.contact-info p {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin-bottom: 3rem;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.contact-item .contact-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-grey-medium);
+  margin-bottom: 0.5rem;
+}
+.contact-item a,
+.contact-item p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  text-decoration: none;
+}
+body.light-mode .contact-item a,
+body.light-mode .contact-item p {
+  color: var(--color-black);
+}
+.contact-item a:hover {
+  color: var(--color-red);
+  opacity: 1;
+}
+
+/* --- 2. Contact Form (Right Column) --- */
+.contact-form {
+  width: 100%;
+}
+.form-step {
+  border: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+.form-step legend {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+body.light-mode .form-step legend {
+  color: var(--color-black);
+}
+
+/* Interest Grid */
+.interest-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.interest-option {
+  display: block;
+  position: relative;
+  background: var(--color-grey-dark);
+  border: 2px solid var(--color-grey-dark);
+  border-radius: 8px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+body.light-mode .interest-option {
+  background: var(--color-grey-light);
+  border-color: var(--color-grey-light);
+}
+
+.interest-option:hover {
+  border-color: var(--color-grey-medium);
+}
+
+.interest-content {
+  display: flex;
+  flex-direction: column;
+}
+.interest-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+body.light-mode .interest-title {
+  color: var(--color-black);
+}
+.interest-price {
+  font-size: 0.9rem;
+  color: var(--color-grey-medium);
+  margin-top: 0.25rem;
+}
+
+/* Hide default radio button */
+.interest-option input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Style for selected state */
+.interest-option input[type="radio"]:checked + .interest-content {
+  /* You can add a checkmark icon here if you want */
+}
+.interest-option input[type="radio"]:checked {
+  border-color: var(--color-red); /* This won't work, style the parent */
+}
+.interest-option:has(input[type="radio"]:checked) {
+  border-color: var(--color-red);
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+/* Form Fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--color-grey-light);
+}
+body.light-mode .form-group label {
+  color: var(--color-grey-medium);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  background-color: var(--color-grey-dark);
+  border: 2px solid var(--color-grey-dark);
+  border-radius: 6px;
+  color: var(--color-white);
+  transition: border-color var(--transition-fast), background-color var(--transition-fast);
+}
+body.light-mode .form-group input[type="text"],
+body.light-mode .form-group input[type="email"],
+body.light-mode .form-group textarea {
+  background-color: var(--color-grey-light);
+  border-color: var(--color-grey-light);
+  color: var(--color-black);
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-red);
+  background-color: var(--color-black);
+}
+body.light-mode .form-group input[type="text"]:focus,
+body.light-mode .form-group input[type="email"]:focus,
+body.light-mode .form-group textarea:focus {
+  border-color: var(--color-red);
+  background-color: var(--color-white);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  padding: 0.85rem 2rem;
+}
+.form-submit-btn i {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* ================================================
+   CONTACT PAGE RESPONSIVE
+   ================================================ */
+
+@media (max-width: 992px) {
+  /* Tablet: Stack layout */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .contact-info h1 {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Mobile: Smaller text and form grid */
+  .contact-info h1 {
+    font-size: 2.25rem;
+  }
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+}

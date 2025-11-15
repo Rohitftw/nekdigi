@@ -1,269 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NekDigital - Digital Excellence Redefined</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nekdigi - We Boost Your Brand</title>
 
-    <div class="noise-overlay"></div>
-    <div class="background-grid-texture"></div>
-    <div class="background-cursor-glow"></div>
-    <div class="custom-cursor"></div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <header class="main-header" data-animate="fade-in">
-        <nav class="container">
-            <a href="/" class="header-logo">
-                <span class="header-logo-icon">N</span>
-                <span class="header-logo-text">NekDigital</span>
-            </a>
-            <div class="header-nav-wrapper">
-                <div class="header-nav-links">
-                    <div class="nav-dropdown">
-                        <button class="nav-dropdown-btn" data-lang-key="nav.about">About</button>
-                        <div class="nav-dropdown-menu">
-                            <a href="about.html" data-lang-key="nav.about_us">About Us</a>
-                            <a href="switching.html" data-lang-key="nav.switching">Switching Service</a>
-                        </div>
-                    </div>
-                    <a href="services.html" data-lang-key="nav.what">What we do</a>
-                    <a href="packages.html" data-lang-key="nav.packages">Packages</a>
-                    <a href="how-it-works.html" data-lang-key="nav.how">How it works</a>
-                    <a href="clients.html" data-lang-key="nav.clients">Customers</a>
-                </div>
-                <div class="language-switcher">
-                    <button class="lang-toggle-btn" id="lang-toggle" aria-label="Choose language">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21a7.5 7.5 0 1 0-7.49-8.98L2.25 12.001a7.5 7.5 0 0 0 7.49 8.989A7.51 7.51 0 0 0 10.5 21Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12a8.954 8.954 0 0 1 8.25-5.908 8.954 8.954 0 0 1 8.25 5.908m-16.5 0a8.954 8.954 0 0 0 8.25 5.908 8.954 8.954 0 0 0 8.25-5.908m0 0a8.954 8.954 0 0 1-8.25-5.908 8.954 8.954 0 0 1-8.25 5.908Z" /></svg>
-                    </button>
-                    <div class="lang-options">
-                        <a href="#" class="lang-option" data-lang="en">EN</a>
-                        <a href="#" class="lang-option" data-lang="nl">NL</a>
-                    </div>
-                </div>
-                <a href="contact.html" class="nav-link-cta" data-lang-key="nav.cta">Let's Talk</a>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="homepage.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  </head>
+  <body>
+    <header class="main-header">
+      <nav class="container">
+        <a href="index.html" class="logo" data-lang-key="logo"> Nek<span>digi</span> </a>
+
+        <div class="nav-links">
+          <a href="index.html" data-lang-key="navHome">Home</a>
+
+          <div class="nav-dropdown">
+            <a href="#" class="nav-drop-toggle" data-lang-key="navAbout">About Us <i data-feather="chevron-down" class="nav-arrow"></i></a>
+            <div class="nav-dropdown-content">
+              <a href="about.html" data-lang-key="navAboutSub">About Us</a>
+              <a href="switching-service.html" data-lang-key="navSwitching">Switching Service</a>
             </div>
-            <button class="mobile-nav-toggle" aria-label="Toggle navigation"><span></span></button>
-        </nav>
+          </div>
+
+          <a href="#" data-lang-key="navWhatWeDo">What We Do</a>
+          <a href="how-it-works.html" data-lang-key="navHowItWorks">How Does It Work</a>
+          <a href="#" data-lang-key="navPackages">Packages</a>
+          <a href="#" data-lang-key="navCustomers">Customers</a>
+          <a href="contact.html" data-lang-key="navContact">Contact Us</a>
+        </div>
+
+        <div class="nav-controls">
+          <div class="lang-toggle">
+            <button id="lang-en" class="active">EN</button>
+            <span>|</span>
+            <button id="lang-nl">NL</button>
+          </div>
+
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <i data-feather="moon" class="icon-moon"></i>
+            <i data-feather="sun" class="icon-sun"></i>
+          </button>
+
+          <button class="mobile-menu-btn" aria-label="Open menu">
+            <i data-feather="menu"></i>
+          </button>
+        </div>
+      </nav>
     </header>
 
     <main>
+      <section class="hero">
+        <div class="container">
+          <h1 data-lang-key="heroTitle">We Boost Your Brand With <span>Digital Excellence</span></h1>
+          <p class="subtitle" data-lang-key="heroSubtitle">
+            A modern approach to digital. We combine strategy, design, and technology to help you grow.
+          </p>
+          <div class="hero-buttons">
+            <a href="#services" class="btn btn-primary" data-lang-key="heroBtnPrimary"> Our Services </a>
+            <a href="contact.html" class="btn btn-secondary" data-lang-key="heroBtnSecondary"> Contact Us </a>
+          </div>
+        </div>
+      </section>
 
-        <section class="hero-section cinematic-hero" id="hero">
-            <div class="hero-background-media">
-                <img src="" alt="Creative team collaborating">
-            </div>
-            <div class="container hero-content-container">
-                <h1 class="hero-headline">
-                    <span data-animate="hero-text-reveal" data-lang-key="homepage.hero_line1">We boost</span>
-                    <span data-animate="hero-text-reveal" data-lang-key="homepage.hero_line2">your brand with</span>
-                    <span class="color-primary" data-animate="hero-text-reveal" data-lang-key="homepage.hero_line3">digital excellence.</span>
-                </h1>
-                <p class="hero-subheadline" data-animate="fade-in" data-animate-delay="0.5" data-lang-key="homepage.hero_sub">
-                    ADVERTISING & MARKETING AGENCY
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="about-content">
+            <div class="tagline" data-lang-key="aboutTag">About The Company</div>
+            <h2 data-lang-key="aboutTitle">Your Partner in Digital Transformation</h2>
+            <p data-lang-key="aboutText1">
+              Nekdigi is a full-service digital agency. We are a team of passionate strategists, designers, and developers dedicated to helping
+              businesses succeed in the digital age.
+            </p>
+            <p data-lang-key="aboutText2">
+              From strategy to execution, we craft unique digital experiences that engage your audience and drive measurable results.
+            </p>
+          </div>
+          <div class="about-image">
+            <img src="https://placehold.co/600x450/141414/E50914?text=About+Us" alt="Nekdigi Team" class="rounded-lg shadow-xl w-full" />
+          </div>
+        </div>
+      </section>
+
+      <section class="trusted-by">
+        <div class="container">
+          <h3 data-lang-key="trustedTitle">Trusted by forward-thinking companies</h3>
+        </div>
+        <div class="logo-carousel">
+          <div class="logo-carousel-track">
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+1" alt="Client 1" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+2" alt="Client 2" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+3" alt="Client 3" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+4" alt="Client 4" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+5" alt="Client 5" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+6" alt="Client 6" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+7" alt="Client 7" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+1" alt="Client 1" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+2" alt="Client 2" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+3" alt="Client 3" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+4" alt="Client 4" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+5" alt="Client 5" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+6" alt="Client 6" /></div>
+            <div class="logo-carousel-slide"><img src="https://placehold.co/120x60/cccccc/999999?text=Client+7" alt="Client 7" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="services-section-sticky">
+        <div class="container">
+          <div class="services-header">
+            <div class="tagline" data-lang-key="servicesTag">Our Services</div>
+            <h2 data-lang-key="servicesTitle">A Modern Approach to Digital</h2>
+            <p class="subtitle" data-lang-key="servicesSubtitle">
+              We provide everything you need to build a powerful brand and accelerate your growth.
+            </p>
+          </div>
+
+          <div class="services-sticky-layout">
+            <aside class="services-nav-sticky">
+              <nav>
+                <a href="#service-1" class="service-nav-link active" data-lang-key="service1Title">01. Strategy & Branding</a>
+                <a href="#service-2" class="service-nav-link" data-lang-key="service2Title">02. Design & Development</a>
+                <a href="#service-3" class="service-nav-link" data-lang-key="service3Title">03. Optimize & Traffic</a>
+              </nav>
+            </aside>
+
+            <div class="services-content">
+              <article id="service-1" class="service-panel">
+                <h3 data-lang-key="service1Title">01. Strategy & Branding</h3>
+                <img src="https://placehold.co/600x350/E50914/FFFFFF?text=Strategy+Image" alt="Strategy & Branding" class="service-image" />
+                <p data-lang-key="service1DescFull">
+                  We define your brand's voice, identity, and go-to-market strategy to ensure you stand out. This includes market research,
+                  competitive analysis, and creating a unique brand persona that connects with your target audience.
                 </p>
+                <a href="#" class="learn-more" data-lang-key="learnMore"> Learn More <i data-feather="arrow-right"></i> </a>
+              </article>
+
+              <article id="service-2" class="service-panel">
+                <h3 data-lang-key="service2Title">02. Design & Development</h3>
+                <img src="https://placehold.co/600x350/E50914/FFFFFF?text=Design+Image" alt="Design & Development" class="service-image" />
+                <p data-lang-key="service2DescFull">
+                  Crafting beautiful, user-friendly websites and applications that perform flawlessly. Our team builds responsive, fast, and secure
+                  digital products using modern technologies like React, Vue, and high-performance backends.
+                </p>
+                <a href="#" class="learn-more" data-lang-key="learnMore"> Learn More <i data-feather="arrow-right"></i> </a>
+              </article>
+
+              <article id="service-3" class="service-panel">
+                <h3 data-lang-key="service3Title">03. Optimize & Traffic</h3>
+                <img src="https://placehold.co/600x350/E50914/FFFFFF?text=Traffic+Image" alt="Optimize & Traffic" class="service-image" />
+                <p data-lang-key="service3DescFull">
+                  Driving targeted traffic through advanced SEO, SEM, and social media marketing campaigns that deliver measurable ROI. We analyze
+                  data to continuously optimize your funnels and increase conversions.
+                </p>
+                <a href="#" class="learn-more" data-lang-key="learnMore"> Learn More <i data-feather="arrow-right"></i> </a>
+              </article>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="service-showcase-section" id="services">
-            <div class="container service-showcase-grid">
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <div class="text-center">
+            <h2 data-lang-key="faqTitle">Frequently Asked Questions</h2>
+            <p class="subtitle" data-lang-key="faqSubtitle">
+              Have questions? We've got answers. If you don't see your question, feel free to contact us.
+            </p>
+          </div>
 
-                <nav class="showcase-sticky-nav">
-                    <h2 class="section-heading" data-animate="fade-in-up">
-                        <span class="heading-overline" data-lang-key="homepage.process_overline">Our Process</span>
-                        <span data-lang-key="homepage.process_title">A modern approach to digital.</span>
-                    </h2>
-                    <p class="process-description" data-animate="fade-in-up" data-animate-delay="0.2" data-lang-key="homepage.process_desc">
-                        We don't just build. We partner, strategize, and elevate. Our process is built on a transparent foundation.
-                    </p>
-                    <ul>
-                        <li>
-                            <a href="#dossier-1" class="showcase-nav-link is-active" data-target="dossier-1">
-                                <span class="nav-number">01</span>
-                                <span class="nav-title">Stylish Website</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#dossier-2" class="showcase-nav-link" data-target="dossier-2">
-                                <span class="nav-number">02</span>
-                                <span class="nav-title">Google Ads</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#dossier-3" class="showcase-nav-link" data-target="dossier-3">
-                                <span class="nav-number">03</span>
-                                <span class="nav-title">Email Campaigns</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+          <div class="faq-accordion">
+            <details>
+              <summary>
+                <span data-lang-key="faqQ1">What is the typical project timeline?</span>
+                <i data-feather="chevron-down" class="faq-icon"></i>
+              </summary>
+              <div class="faq-content">
+                <p data-lang-key="faqA1">
+                  Project timelines vary depending on the scope. A typical website design and development project takes between 6 to 12 weeks from
+                  start to launch. We'll provide a detailed timeline after our initial discovery call.
+                </p>
+              </div>
+            </details>
 
-                <div class="showcase-scrolling-content">
-                    
-                    <article class="showcase-dossier" id="dossier-1">
-                        <div class="dossier-image">
-                            <img src="https://nekdigital.nl/wp-content/uploads/2025/01/Untitled-design-6-1.png" alt="Stylish Website Mockup">
-                        </div>
-                        <div class="dossier-content">
-                            <h3 class="dossier-title" data-lang-key="homepage.process_step1_title">Stylish, user-friendly website.</h3>
-                            <p class="dossier-text" data-lang-key="homepage.process_step1_desc">Your business deserves a website that acts as its perfect online business card—optimized for Google and designed to leave a lasting impression. With no start-up costs, we'll get you online in no time!</p>
-                        </div>
-                    </article>
+            <details>
+              <summary>
+                <span data-lang-key="faqQ2">How much does a new website cost?</span>
+                <i data-feather="chevron-down" class="faq-icon"></i>
+              </summary>
+              <div class="faq-content">
+                <p data-lang-key="faqA2">
+                  Our pricing is based on the specific needs of your project. We offer custom quotes after understanding your goals and requirements.
+                  We focus on providing value and a positive ROI.
+                </p>
+              </div>
+            </details>
 
-                    <article class="showcase-dossier" id="dossier-2">
-                        <div class="dossier-image">
-                            <img src="https://nekdigital.nl/wp-content/uploads/2025/01/Indian-restaurant-in-Amsterdam-1.png" alt="Google Ads Dashboard">
-                        </div>
-                        <div class="dossier-content">
-                            <h3 class="dossier-title" data-lang-key="homepage.process_step2_title">Increase guests with Google Ads.</h3>
-                            <p class="dossier-text" data-lang-key="homepage.process_step2_desc">We run highly targeted campaigns to drive qualified traffic to your website, ensuring every click counts towards your growth. Our team handles strategy, setup, and optimization.</p>
-                        </div>
-                    </article>
-
-                    <article class="showcase-dossier" id="dossier-3">
-                        <div class="dossier-image">
-                            <img src="https://nekdigital.nl/wp-content/uploads/2025/01/Indian-restaurant-in-Amsterdam-3.png" alt="Email Campaigns Mockup">
-                        </div>
-                        <div class="dossier-content">
-                            <h3 class="dossier-title" data-lang-key="homepage.process_step3_title">Exclusive offers and promotions.</h3>
-                            <p class="dossier-text" data-lang-key="homepage.process_step3_desc">Stay connected with your loyal customers by sending a monthly newsletter featuring discount vouchers and special deals. You choose the content, we'll create the newsletter.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="client-wall-section" id="client-wall">
-            <div class="container-small" data-animate="fade-in-up">
-                <h2 class="section-heading" style="text-align: center;">
-                    <span class="heading-overline" data-lang-key="homepage.clients_title">Trusted by innovative brands</span>
-                </h2>
-            </div>
-            <div class="client-wall-perspective">
-                <div class="client-wall-grid" id="client-wall-grid">
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-13.png" alt="Amossys"></a>
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-9.png" alt="Sol ei Luna"></a>
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-6.png" alt="Hindi Universe Foundation"></a>
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-3.png" alt="Bihar Foundation"></a>
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-2.png" alt="Ligen Power"></a>
-                    <a href="#" class="client-logo-box"><img src="https://nekdigital.nl/wp-content/uploads/2025/01/Ligen-Power-7.png" alt="Anandadhara"></a>
-                </div>
-            </div>
-            <div class="all-projects-link" data-animate="fade-in-up" style="margin-top: 4rem;">
-                <a href="clients.html" class="cta-link-secondary">
-                    <span data-lang-key="homepage.projects_cta">View All Clients</span>
-                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 14L14 1M14 1H4M14 1V11" stroke="currentColor" stroke-width="2"/></svg>
-                </a>
-            </div>
-        </section>
-
-        <section class="faq-section" id="faq" data-animate="fade-in-up">
-            <div class="container container-small">
-                <h2 class="section-heading" style="text-align: center;">
-                    <span class="heading-overline" data-lang-key="homepage.faq_overline">Got Questions?</span>
-                    <span data-lang-key="homepage.faq_title">Clarify your confusion.</span>
-                </h2>
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span data-lang-key="homepage.faq_q1">What is a domain name?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p data-lang-key="homepage.faq_a1">A domain name is your website's unique address on the internet, like 'nekdigital.nl'. It's how people find you.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span data-lang-key="homepage.faq_q2">What is web hosting?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p data-lang-key="homepage.faq_a2">Web hosting is the service that stores your website's files on a server, making it accessible to anyone on the web.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span data-lang-key="homepage.faq_q3">How long does a website take?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p data-lang-key="homepage.faq_a3">A standard business website typically takes 4-6 weeks from start to launch, depending on the complexity and content.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span data-lang-key="homepage.faq_q4">What is the investment for a new website?</span>
-                            <span class="faq-icon">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p data-lang-key="homepage.faq_a4">Our packages start from €159 per month, but we provide custom quotes based on your specific needs and goals.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-cta-section">
-            <div class="container">
-                <h2 class="section-heading text-center" data-animate="fade-in-up">
-                    <span data-lang-key="homepage.cta_line1">Let's build</span>
-                    <span class="color-primary" data-lang-key="homepage.cta_line2">what's next.</span>
-                </h2>
-                <div class="cta-grid" data-animate="fade-in-up" data-animate-delay="0.2">
-                    <a href="contact.html" class="cta-card">
-                        <span class="cta-card-overline">Have a project in mind?</span>
-                        <span class="cta-card-title" data-lang-key="homepage.cta_button">Start a Project →</span>
-                    </a>
-                    <a href="appointment.html" class="cta-card">
-                        <span class="cta-card-overline">Want to learn more?</span>
-                        <span class="cta-card-title">Book an Appointment →</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
+            <details>
+              <summary>
+                <span data-lang-key="faqQ3">Do you offer support after the project is launched?</span>
+                <i data-feather="chevron-down" class="faq-icon"></i>
+              </summary>
+              <div class="faq-content">
+                <p data-lang-key="faqA3">
+                  Yes! We offer ongoing support and maintenance packages to keep your website secure, updated, and performing optimally. We also offer
+                  digital marketing retainers to help you grow your traffic.
+                </p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="main-footer">
-        <div class="container footer-grid">
-            <div class="footer-brand">
-                <a href="/" class="header-logo">
-                    <span class="header-logo-icon">N</span>
-                    <span class="header-logo-text">NekDigital</span>
-                </a>
-                <p class="footer-tagline" data-lang-key="footer.tagline">Digital Excellence.</p>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-col">
+            <a href="index.html" class="logo" data-lang-key="logo">Nek<span>digi</span></a>
+            <p data-lang-key="footerAbout">
+              We are a full-service digital agency dedicated to helping businesses grow and succeed in the digital world.
+            </p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+              <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+              <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
             </div>
-            <div class="footer-links">
-                <h5 class="footer-heading" data-lang-key="footer.explore">Explore</h5>
-                <a href="about.html" data-lang-key="nav.about">About</a>
-                <a href="services.html" data-lang-key="nav.what">What we do</a>
-                <a href="packages.html" data-lang-key="nav.packages">Packages</a>
-            </div>
-            <div class="footer-links">
-                <h5 class="footer-heading" data-lang-key="footer.connect">Connect</h5>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
-                <a href="#">X (Twitter)</a>
-            </div>
-            <div class="footer-contact">
-                <h5 class->footer-heading" data-lang-key="footer.touch">Get in touch</h5>
-                <a href="mailto:info@nekdigital.nl">info@nekdigital.nl</a>
-            </div>
-        </div>
-        <div class="container footer-bottom">
-            <p>© <span id="current-year"></span> <span data-lang-key="footer.rights">NekDigital. All Rights reserved.</span></p>
-            <p class="flicker">Made by NekDigital</p>
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
+          </div>
 
-</body>
+          <div class="footer-col">
+            <h4 data-lang-key="footerLinks">Quick Links</h4>
+            <ul>
+              <li><a href="#about" data-lang-key="navAbout">About Us</a></li>
+              <li><a href="#services" data-lang-key="navServices">Services</a></li>
+              <li><a href="#" data-lang-key="footerPortfolio">Portfolio</a></li>
+              <li><a href="contact.html" data-lang-key="navContact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-lang-key="navServices">Services</h4>
+            <ul>
+              <li><a href="#" data-lang-key="service1TitleShort">Strategy & Branding</a></li>
+              <li><a href="#" data-lang-key="service2TitleShort">Design & Development</a></li>
+              <li><a href="#" data-lang-key="service3TitleShort">Optimize & Traffic</a></li>
+              <li><a href="#" data-lang-key="footerSEO">SEO & Marketing</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4 data-lang-key="footerContact">Get in Touch</h4>
+            <ul class="footer-contact-list">
+              <li>
+                <i data-feather="map-pin"></i>
+                <span data-lang-key="footerAddress">123 Digital Ave, Amsterdam, NL</span>
+              </li>
+              <li>
+                <i data-feather="mail"></i>
+                <a href="mailto:info@nekdigi.nl">info@nekdigi.nl</a>
+              </li>
+              <li>
+                <i data-feather="phone"></i>
+                <a href="tel:+3100123456">+31 (0) 0 123 456</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> Nekdigi. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
 </html>
