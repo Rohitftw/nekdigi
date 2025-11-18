@@ -1,0 +1,162 @@
+/* ================================================
+   SWITCHING SERVICE PAGE STYLES
+   ================================================ */
+
+/* --- Active Nav Link Style --- */
+/* This highlights the "About Us" toggle in the nav */
+.nav-drop-toggle.active-page {
+  color: var(--color-red) !important;
+}
+
+/* --- 1. Page Hero Section (UPDATED) --- */
+/* Re-used styles from packages-page.css */
+.page-hero-alt {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-grey-dark);
+}
+body.light-mode .page-hero-alt {
+  background-color: var(--color-grey-light);
+}
+.page-hero-alt h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+body.light-mode .page-hero-alt h1 {
+  color: var(--color-black);
+}
+.page-hero-alt .subtitle {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin: 0 auto;
+  max-width: 500px;
+}
+/* --- End of Hero Updates --- */
+
+/* --- 2. Steps Section --- */
+.steps-section {
+  /* Based on .why-section from aboutpage.css */
+  background-color: var(--color-black);
+  padding: 5rem 0;
+}
+body.light-mode .steps-section {
+  background-color: var(--color-white);
+}
+
+.steps-grid {
+  /* Based on .why-grid from aboutpage.css */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* New card style based on image_3ed698.png */
+.step-card {
+  background: var(--color-black);
+  padding: 2.5rem;
+  border-radius: 8px;
+  /* Key style: Red border */
+  border: 2px solid var(--color-red);
+  /* Key style: Red glow */
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+  transition: transform var(--transition-fast);
+  position: relative; /* For the corner dot */
+}
+body.light-mode .step-card {
+  background: var(--color-white);
+  border: 2px solid var(--color-red);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+/* The red "Step 01" tag */
+.step-card-tag {
+  display: block;
+  font-weight: 700;
+  color: var(--color-red);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.step-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+body.light-mode .step-card h3 {
+  color: var(--color-black);
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: var(--color-grey-medium);
+  line-height: 1.6;
+}
+
+/* The red glowing dot in the corner */
+.step-card::after {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+  box-shadow: 0 0 12px 2px var(--color-red);
+}
+
+/* --- 3. CTA Section --- */
+.cta-section {
+  background-color: var(--color-grey-dark);
+  padding: 3rem 0;
+}
+body.light-mode .cta-section {
+  background-color: var(--color-grey-light);
+}
+.cta-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cta-content h2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+body.light-mode .cta-content h2 {
+  color: var(--color-black);
+}
+.cta-content p {
+  color: var(--color-grey-medium);
+  max-width: 600px;
+}
+body.light-mode .cta-content p {
+  color: #555;
+}
+
+.cta-button .btn {
+  font-size: 1rem;
+  padding: 0.85rem 2rem;
+  flex-shrink: 0; /* Prevents button from shrinking */
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+  .cta-section .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

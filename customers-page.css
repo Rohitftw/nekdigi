@@ -1,0 +1,106 @@
+/* ================================================
+   CUSTOMERS PAGE STYLES
+   ================================================ */
+
+/* --- General Page Styles --- */
+.nav-links a.active-page[data-lang-key="navCustomers"] {
+  color: var(--color-red);
+}
+
+/* --- Page Hero (re-used from other pages) --- */
+.page-hero-alt {
+  padding: 4rem 0;
+  text-align: center;
+  background-color: var(--color-grey-dark);
+}
+body.light-mode .page-hero-alt {
+  background-color: var(--color-grey-light);
+}
+.page-hero-alt h1 {
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+}
+body.light-mode .page-hero-alt h1 {
+  color: var(--color-black);
+}
+.page-hero-alt .subtitle {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* --- Customers Grid Section --- */
+.customers-section {
+  padding: 3rem 0 5rem 0;
+}
+
+.customers-grid {
+  display: grid;
+  /* 3-column grid like your inspiration */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Style for the logo cards, based on .why-card */
+.customer-card {
+  background: var(--color-grey-dark);
+  padding: 2.5rem;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  /* Added flex to center the logo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+}
+body.light-mode .customer-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Red glow on hover */
+.customer-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+body.light-mode .customer-card:hover {
+  box-shadow: 0 0 20px rgba(229, 9, 20, 0.5);
+}
+
+/* Logo image styling, based on .logo-carousel */
+.customer-card img {
+  max-width: 100%;
+  height: auto;
+  max-height: 80px; /* Control logo size */
+  filter: grayscale(1) opacity(0.7);
+  transition: var(--transition-fast);
+}
+body.light-mode .customer-card img {
+  filter: grayscale(1) opacity(0.6);
+}
+
+/* Logo color on hover */
+.customer-card:hover img {
+  filter: grayscale(0) opacity(1);
+}
+body.light-mode .customer-card:hover img {
+  filter: grayscale(0) opacity(1);
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  /* 2-column grid on tablets */
+  .customers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1-column grid on mobile */
+  .customers-grid {
+    grid-template-columns: 1fr;
+  }
+}

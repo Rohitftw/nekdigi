@@ -73,14 +73,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- 2. THEME TOGGLE ---
 
+  // --- 2. THEME TOGGLE ---
+
   const themeToggle = document.getElementById("theme-toggle");
   const bodyElement = document.body;
 
   if (themeToggle && bodyElement) {
-    const iconMoon = themeToggle.querySelector(".icon-moon");
-    const iconSun = themeToggle.querySelector(".icon-sun");
+    // const iconMoon = ... <--- DELETED from here
+    // const iconSun = ... <--- DELETED from here
 
     function setTheme(theme) {
+      // MOVED the variables *inside* the function:
+      const iconMoon = themeToggle.querySelector(".icon-moon");
+      const iconSun = themeToggle.querySelector(".icon-sun");
+
       if (theme === "light") {
         bodyElement.classList.add("light-mode");
         if (iconMoon) iconMoon.style.display = "none";
@@ -92,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (iconSun) iconSun.style.display = "none";
         localStorage.theme = "dark";
       }
-      feather.replace(); // Re-run to fix hidden icons
+      // feather.replace(); // <--- DELETED! This call was breaking it.
     }
 
     const currentTheme = localStorage.theme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -103,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
       setTheme(newTheme);
     });
   }
-
   // --- 3. STICKY NAV SCROLLSPY ---
 
   const servicePanels = document.querySelectorAll(".service-panel");

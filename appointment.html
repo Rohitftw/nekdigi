@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>How It Works - Nekdigi</title>
+    <title>Book an Appointment - Nekdigi</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="how-it-works-page.css" />
+    <link rel="stylesheet" href="appointmentpage.css" />
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
   </head>
   <body>
@@ -58,92 +58,76 @@
     </header>
 
     <main>
-      <section class="page-hero-alt">
+      <section class="appointment-section">
         <div class="container">
-          <h1 data-lang-key="howitworksTitle">How Neksoft Consultancy Works</h1>
-        </div>
-      </section>
+          <div class="appointment-container">
+            <div class="appointment-header">
+              <h1 data-lang-key="contactTitle">Book Your Appointment</h1>
+              <p data-lang-key="contactSubtitle">
+                We'd be happy to discuss your requirements. Fill out the form and we'll reach out to schedule a time.
+              </p>
+            </div>
 
-      <section class="timeline-section">
-        <div class="timeline-container">
-          <div class="timeline-line">
-            <div class="timeline-line-progress"></div>
+            <form class="appointment-form">
+              <div class="form-grid-main">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="name" data-lang-key="formName">Your Name *</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email" data-lang-key="formEmail">Your Email *</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="date">Preferred Date</label>
+                    <input type="date" id="date" name="date" />
+                  </div>
+                </div>
+
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" />
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" />
+                  </div>
+                  <div class="form-group">
+                    <label for="time">Preferred Time</label>
+                    <input type="time" id="time" name="time" />
+                  </div>
+                </div>
+              </div>
+              <fieldset class="form-step">
+                <legend>I am interested in:</legend>
+                <div class="simple-radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="interest" value="essential" />
+                    <span>Essential Launch (€159)</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="interest" value="growth" />
+                    <span>Growth Engine (€239)</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="interest" value="dominance" />
+                    <span>Digital Dominance (€299)</span>
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="interest" value="inquiry" />
+                    <span>General Inquiry / I don't know yet</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <button type="submit" class="btn btn-primary form-submit-btn">
+                <span>Book Appointment</span>
+                <i data-feather="arrow-right"></i>
+              </button>
+            </form>
           </div>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">01</span>
-              <h3 data-lang-key="howStep1Title">Select marketing package</h3>
-              <p data-lang-key="howStep1Desc">
-                We offer three marketing packages: Package 1, 2, or 3. Simply choose the one you need and we'll connect you to schedule an
-                appointment. Unsure which package to pick? No worries, we'll help you decide.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">02</span>
-              <h3 data-lang-key="howStep2Title">Establishing a foundation and creating a website</h3>
-              <p data-lang-key="howStep2Desc">
-                We start by establishing a solid foundation and then build a professional, conversion-focused website tailored to your needs and
-                business appearance, fully optimized for mobile devices.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">03</span>
-              <h3 data-lang-key="howStep3Title">Increase website traffic using Google Ads</h3>
-              <p data-lang-key="howStep3Desc">
-                With Package 2, we'll create a tailored Google advertising plan and run highly targeted campaigns to bring guest traffic to your
-                website for lunch reservations, event inquiries, or job applications. Package 2 also includes a data-driven trial period for 4-6 weeks
-                to optimize.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">04</span>
-              <h3 data-lang-key="howStep4Title">Engage with regular clients through email</h3>
-              <p data-lang-key="howStep4Desc">
-                With Package 3, in addition to a new website and Google Ads, we'll also implement email marketing to inform clients about latest
-                offers or exciting promotions. Together, we'll inform them about your latest offers or exciting promotions and projects, encouraging
-                repeat visits and higher conversions.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">05</span>
-              <h3 data-lang-key="howStep5Title">Ongoing communication and regular updates</h3>
-              <p data-lang-key="howStep5Desc">
-                The quickest and most efficient way to communicate is through WhatsApp. As a busy entrepreneur, you can always ask questions or
-                request changes. We provide daily support and keep you updated on progress. Of course, you're always welcome to call us during the
-                day.
-              </p>
-            </div>
-          </article>
-
-          <article class="timeline-item">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <span class="timeline-number">06</span>
-              <h3 data-lang-key="howStep6Title">Invoicing and scheduling appointments</h3>
-              <p data-lang-key="howStep6Desc">
-                We operate on a subscription basis, providing all services for a fixed fee, payable monthly/quarterly. We always start on the 1st of
-                the same work month, so you always know exactly what to expect. Simple and clear!
-              </p>
-            </div>
-          </article>
         </div>
       </section>
     </main>
