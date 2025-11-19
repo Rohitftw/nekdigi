@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display.swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="global.css" />
     <link rel="stylesheet" href="header.css" />
@@ -58,16 +58,23 @@
     </header>
 
     <main>
+      <section class="page-header-split">
+        <div class="container">
+          <div class="header-content">
+            <span class="hero-tagline">Book A Meeting</span>
+            <h1>Schedule Your Free Consultation.</h1>
+            <p class="subtitle">Ready to start? Pick a time that works for you, and let's discuss how we can elevate your business.</p>
+          </div>
+
+          <div class="header-image">
+            <img src="assests/hero-section/appointment.png" alt="Book Appointment" />
+          </div>
+        </div>
+      </section>
+
       <section class="appointment-section">
         <div class="container">
           <div class="appointment-container">
-            <div class="appointment-header">
-              <h1 data-lang-key="contactTitle">Book Your Appointment</h1>
-              <p data-lang-key="contactSubtitle">
-                We'd be happy to discuss your requirements. Fill out the form and we'll reach out to schedule a time.
-              </p>
-            </div>
-
             <form class="appointment-form">
               <div class="form-grid-main">
                 <div class="form-column">
@@ -100,6 +107,7 @@
                   </div>
                 </div>
               </div>
+
               <fieldset class="form-step">
                 <legend>I am interested in:</legend>
                 <div class="simple-radio-group">

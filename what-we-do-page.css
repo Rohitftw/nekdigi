@@ -228,10 +228,14 @@ body.light-mode .why-card h3 {
     grid-template-columns: 1fr;
   }
 }
+/* Update this block in what-we-do-page.css */
 .service-image {
   width: 100%;
-  max-width: 500px; /* Limits the width */
-  height: 500px; /* Fixed height */
+  /* REMOVE max-width: 500px; to let it fill the panel */
+
+  /* Use a percentage or adjust this fixed height to be larger/smaller */
+  height: 500px; /* Adjust this value if you want the image taller */
+
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 1.5rem;

@@ -241,3 +241,112 @@ body.light-mode .nav-dropdown-content a:hover {
 .nav-links a.active-page {
   color: var(--color-red);
 }
+/* ================================================
+   NAVBAR FIXES (Light Mode & Active State)
+   ================================================ */
+
+/* 1. FIX LIGHT MODE HOVER
+   We force the browser to use Red on hover, even in light mode. */
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-drop-toggle:hover,
+body.light-mode .nav-dropdown-content a:hover {
+  color: var(--color-red) !important;
+}
+
+/* 2. ACTIVE PAGE UNDERLINE
+   This adds a slick red line under the active link. */
+
+/* Set position relative so the line stays attached to the text */
+.nav-links a.active-page,
+.nav-drop-toggle.active-page {
+  position: relative;
+}
+
+/* Create the underline using a pseudo-element */
+.nav-links a.active-page::after,
+.nav-drop-toggle.active-page::after {
+  content: "";
+  position: absolute;
+
+  /* Position it at the very bottom of the nav item */
+  bottom: 0;
+  left: 0;
+
+  /* Make it span the full width of the text */
+  width: 100%;
+
+  /* Line Thickness and Color */
+  height: 3px;
+  background-color: var(--color-red);
+
+  /* Optional: Round the edges of the line */
+  border-radius: 2px 2px 0 0;
+}
+/* ================================================
+   ACTIVE PAGE UNDERLINE
+   ================================================ */
+
+/* 1. Set position to relative so the line sticks to the text */
+.nav-links a.active-page,
+.nav-drop-toggle.active-page {
+  position: relative;
+  color: var(--color-red) !important; /* Force text color to red */
+}
+
+/* 2. Create the red line using a pseudo-element */
+.nav-links a.active-page::after,
+.nav-drop-toggle.active-page::after {
+  content: "";
+  position: absolute;
+
+  /* Position at the bottom */
+  bottom: 0;
+  left: 0;
+
+  /* Size and Color */
+  width: 100%;
+  height: 3px; /* Thickness of the line */
+  background-color: var(--color-red);
+
+  /* Rounded corners for the line */
+  border-radius: 2px 2px 0 0;
+
+  /* Animation (Optional) - Makes it slide in */
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+/* ================================================
+   FIX: DROPDOWN ACTIVE STATE
+   ================================================ */
+
+/* 1. Fix Invisible Text
+   Ensure the active link inside the dropdown has WHITE text 
+   to contrast with the red background. */
+.nav-dropdown-content a.active-page,
+.nav-dropdown-content a:hover {
+  background-color: var(--color-red);
+  color: var(--color-white) !important; /* Forces white text */
+  opacity: 1;
+}
+
+/* 2. Remove Unwanted Underline
+   The "Red Underline" logic shouldn't apply inside the dropdown. */
+.nav-dropdown-content a.active-page::after {
+  display: none; /* Hides the line */
+}
+
+/* 3. Reset Position
+   Removes the 'relative' positioning used for the underline */
+.nav-dropdown-content a.active-page {
+  position: static;
+}

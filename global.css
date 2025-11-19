@@ -146,3 +146,217 @@ body.light-mode .btn-secondary:hover {
   color: var(--color-grey-medium);
   margin: 1.5rem 0;
 }
+/* ================================================
+   INNER PAGE HEADER (SPLIT LAYOUT)
+   Distinguishes inner pages from the centered Homepage
+   ================================================ */
+
+.page-header-split {
+  padding: 4rem 0;
+  background-color: var(--color-grey-dark); /* Matches your dark theme */
+  overflow: hidden; /* Keeps everything contained */
+}
+/* Add this to your .page-header-split styles in global.css */
+
+.hero-tagline {
+  display: block; /* Forces it to its own line */
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px; /* Makes it look premium */
+  text-transform: uppercase;
+  color: var(--color-red); /* Matches your brand accent */
+  margin-bottom: 1rem; /* Space between tagline and H1 */
+  font-family: "Inter", sans-serif;
+}
+
+/* Optional: Add a small decorative line next to it if you want */
+.hero-tagline {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-tagline::before {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-red);
+}
+
+/* Light Mode Support */
+body.light-mode .page-header-split {
+  background-color: var(--color-grey-light);
+}
+
+.page-header-split .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 50% Text, 50% Image */
+  align-items: center; /* Vertically center */
+  gap: 4rem;
+}
+
+/* --- Left Column: Typography --- */
+.header-content {
+  text-align: left; /* Distinct from Homepage's Center alignment */
+}
+
+.header-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  color: var(--color-white);
+}
+body.light-mode .header-content h1 {
+  color: var(--color-black);
+}
+
+/* Optional: A small red line to separate title/subtitle */
+.header-content h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-red); /* Your Brand Red */
+  margin-top: 1rem;
+}
+
+.header-content .subtitle {
+  font-size: 1.1rem;
+  color: var(--color-grey-medium);
+  line-height: 1.6;
+  max-width: 500px; /* Prevents text from getting too wide */
+  margin-bottom: 2rem; /* Space if you want to add a button later */
+}
+
+/* --- Right Column: The Visual --- */
+.header-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/* Update this section in your global.css */
+
+.header-image img {
+  width: 100%;
+  max-width: 500px;
+
+  /* --- NEW: Height Constraint --- */
+  height: 400px; /* Forces a consistent height */
+  object-fit: cover; /* Smartly crops the image so it doesn't look squished */
+
+  border-radius: 12px;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Optional: Adjust the red border to match the new height perfectly */
+.header-image::before {
+  /* ... previous styles remain the same ... */
+  content: "";
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100%;
+  height: 100%;
+  max-width: 500px;
+
+  /* Ensure the red box respects the image size */
+  max-height: 400px;
+
+  border: 2px solid var(--color-red);
+  border-radius: 12px;
+  z-index: 1;
+  opacity: 0.5;
+}
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+  .page-header-split .container {
+    grid-template-columns: 1fr; /* Stack text on top of image */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .header-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-content h1::after {
+    margin-left: auto;
+    margin-right: auto; /* Center the red line */
+  }
+
+  .header-image::before {
+    right: -10px;
+    top: -10px; /* Tighter offset on mobile */
+  }
+}
+/* ================================================
+   CUSTOM CURSOR (SOFT GLOW STYLE)
+   ================================================ */
+
+/* Update this section in global.css */
+
+@media (hover: hover) and (pointer: fine) {
+  /* 1. Set Specific Cursors */
+  body {
+    cursor: default; /* Standard Arrow for normal areas */
+  }
+
+  /* Force the "Hand" cursor for anything clickable */
+  a,
+  button,
+  .nav-drop-toggle,
+  .package-tab-btn,
+  summary,
+  label[for] {
+    cursor: pointer;
+  }
+
+  /* Keep the "I-beam" only for actual input fields */
+  input,
+  textarea {
+    cursor: text;
+  }
+
+  /* 2. The "Glow" Follower */
+  .cursor-glow {
+    width: 60px;
+    height: 60px;
+
+    /* Faded Red Color */
+    background-color: rgba(229, 9, 20, 0.25);
+
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+
+    /* Placed behind text so you can read through it, 
+       or on top if you want it to tint the text. 
+       z-index: 9999 sits on top. z-index: -1 sits behind. */
+    z-index: 9999;
+    pointer-events: none; /* Clicks pass through it */
+
+    /* THE MAGIC: Soften the edges */
+    filter: blur(12px);
+
+    /* Smooth movement lag */
+    transition: left 0.12s ease-out, top 0.12s ease-out, width 0.3s ease, height 0.3s ease, background-color 0.3s;
+  }
+
+  /* 3. HOVER STATE: Expands when over links */
+  body.hovering .cursor-glow {
+    width: 90px;
+    height: 90px;
+    background-color: rgba(229, 9, 20, 0.15); /* Lighter when expanded */
+    filter: blur(20px); /* Softer blur */
+  }
+}
