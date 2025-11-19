@@ -326,27 +326,31 @@ body.light-mode .nav-dropdown-content a:hover {
   }
 }
 /* ================================================
-   FIX: DROPDOWN ACTIVE STATE
+   /* ================================================
+   FINAL FIX: DROPDOWN STYLES (NO RED BLOCK)
    ================================================ */
 
-/* 1. Fix Invisible Text
-   Ensure the active link inside the dropdown has WHITE text 
-   to contrast with the red background. */
+/* 1. Target both Hover AND Active states in Dropdown */
 .nav-dropdown-content a.active-page,
 .nav-dropdown-content a:hover {
-  background-color: var(--color-red);
-  color: var(--color-white) !important; /* Forces white text */
-  opacity: 1;
+  /* IMPORTANT: This removes the red block */
+  background-color: transparent !important;
+
+  /* This makes the text Red to show it is active/hovered */
+  color: var(--color-red) !important;
+
+  /* Optional: Make it bold to stand out */
+  font-weight: 700;
 }
 
-/* 2. Remove Unwanted Underline
-   The "Red Underline" logic shouldn't apply inside the dropdown. */
+/* 2. Ensure Light Mode behaves the same */
+body.light-mode .nav-dropdown-content a.active-page,
+body.light-mode .nav-dropdown-content a:hover {
+  background-color: transparent !important;
+  color: var(--color-red) !important;
+}
+
+/* 3. Cleanup: Ensure no underlines appear inside dropdown */
 .nav-dropdown-content a.active-page::after {
-  display: none; /* Hides the line */
-}
-
-/* 3. Reset Position
-   Removes the 'relative' positioning used for the underline */
-.nav-dropdown-content a.active-page {
-  position: static;
+  display: none !important;
 }

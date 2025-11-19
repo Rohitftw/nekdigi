@@ -48,8 +48,9 @@
   "service2TitleShort": "Standard",
   "service3TitleShort": "Premium",
 
+  "aboutHeroTag": "About Us",
   "aboutHeroTitle": "Setting a new standard in business marketing.",
-  "aboutHeroSubtitle": "We position your business online with a professional presence and all corresponding expressions: from website to social media, from marketing to sales. With years of experience in digital marketing, we've redefined the approach to be agile, iconic, flexible, and transparent, always keeping the entrepreneur at the core.",
+  "aboutHeroSubtitle": "We position your business online with a professional presence. Agile, iconic, and transparent—always keeping the entrepreneur at the core.",
   "whyTitle": "Why Neksoft Consultancy Digital Services?",
   "whyCard1Title": "More customer",
   "whyCard1Desc": "Neksoft is dedicated to helping you attract more customers. We do this by providing you with a website that goes beyond just being a business card.",
@@ -74,6 +75,9 @@
   "special4Desc": "We value flexibility. After 6 months, you can cancel your subscription monthly, with no obligations or hassle.",
 
   "contactTitle": "LET'S BUILD WHAT'S NEXT.",
+  "contactHeroTag": "Get In Touch",
+  "contactHeroTitle": "Let's build what's next.",
+  "contactHeroSubtitle": "Tell us about your next big idea, or just say hello. We're here to help you grow. If you prefer to talk, reach out directly.",
   "contactSubtitle": "Tell us about your next big idea, or just say hello. We're here to help you grow. If you prefer to talk, reach out directly.",
   "contactEmailLabel": "EMAIL US",
   "contactPhoneLabel": "CALL US",
@@ -91,7 +95,8 @@
   "formMessage": "Your Message *",
   "formSubmit": "Send Message",
 
-  "howitworksTitle": "How Neksoft Consultancy Works",
+  "howitworksTitle": "From Concept to Conversion.",
+  "howitworksSubtitle": "We take care of all your online marketing needs for your hospitality business. Below, we outline our collaboration process in a few easy steps.",
   "howStep1Title": "Select marketing package",
   "howStep1Desc": "We offer three marketing packages: Package 1, 2, or 3. Simply choose the one you need and we'll connect you to schedule an appointment. Unsure which package to pick? No worries, we'll help you decide.",
   "howStep2Title": "Establishing a foundation and creating a website",
@@ -129,6 +134,9 @@
   "serviceAD3Desc": "We create designs, including posts, flyers, and other promotional assets. We're here to meet your business needs effectively. (Cost depends on creative)",
 
   "packagesTitle": "Our Packages",
+  "packagesHeroTag": "Our Packages",
+  "packagesHeroTitle": "Select the package that best fits your business and watch it grow.",
+  "packagesHeroSubtitle": "What’s included in the package? No start-up fees, no commissions, clear terms, continuous services, and full support—all for a fixed monthly amount. Simple!",
   "packagesSubtitle": "Select the package that best fits your business and watch it grow.",
   "pkgEssentialDesc": "Perfect for establishing online visibility. A professional presence and all tools to run your business.",
   "pkgGrowthDesc": "The ideal choice for start-ups looking to grow. No start-up fees, no commissions, clear terms.",
@@ -162,5 +170,32 @@
   "featManager": "Dedicated Relationship Manager",
   "addonsTitle": "Add-ons",
   "addonMapsTitle": "Google Maps Ads",
-  "addonMapsDesc": "Boost people's love for business on Google. We make sure you stand out by boosting visibility with targeted keywords."
+  "addonMapsDesc": "Boost people's love for business on Google. We make sure you stand out by boosting visibility with targeted keywords.",
+
+  "switchingTitle": "Seamless switching, no worries.",
+  "switchingSubtitle": "Switching is seamless with Neksoft Consultancy Services. We handle all technical aspects—from DNS to data migration—so you can focus on your business.",
+  "switchingStep1Tag": "Step 01",
+  "switchingStep1Title": "Hosting and website",
+  "switchingStep1Desc": "First, we reach out to your current hosting provider to handle all technical aspects of the transition. We ensure your website runs smoothly without interruptions, taking care of complex tasks like DNS settings, FTP details, and database migration—everything is our responsibility.",
+  "switchingStep2Tag": "Step 02",
+  "switchingStep2Title": "Transfer emails",
+  "switchingStep2Desc": "Next, we handle the migration of your emails, ensuring that your existing email addresses are seamlessly transferred to the new platform. You don't need to worry—your email, a vital part of your business, will be fully maintained throughout the process.",
+  "switchingStep3Tag": "Step 03",
+  "switchingStep3Title": "Booking/Reservation system and other software",
+  "switchingStep3Desc": "Finally, we assess any specific systems you currently use, like your reservation system, and ensure they're properly integrated into the new platform. We handle everything so you can focus on running your business, making the process as smooth and easy as possible.",
+  "ctaTitle": "Book an Appointment",
+  "ctaSubtitle": "Are you excited? We're ready to get started and would love to visit you to demonstrate how we can help your business.",
+  "ctaButton": "Book An Appointment",
+
+  "customersHeroTag": "Our Partners",
+  "customersTitle": "Success Stories We Are Proud Of.",
+  "customersSubtitle": "We partner with innovative companies from around the world to build brands that last.",
+
+  "appointmentHeroTag": "Book A Meeting",
+  "appointmentHeroTitle": "Schedule Your Free Consultation.",
+  "appointmentHeroSubtitle": "Ready to start? Pick a time that works for you, and let's discuss how we can elevate your business.",
+
+  "whatWeDoHeroTag": "Our Expertise",
+  "whatWeDoHeroTitle": "Everything you need to grow online.",
+  "whatWeDoHeroSubtitle": "From stunning websites to data-driven marketing campaigns. We provide the full stack of digital services to help you grow."
 }
